@@ -1,0 +1,1515 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body data-ng-app="ObstacleManiac">
+<!-- #BeginLibraryItem "/Library/header-after-login.lbi" --> 
+<!--Popup Start-->
+<div id="maniacPointsModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h5 class="modal-title">MANIAC POINTS</h5>
+        <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a> </div>
+      <div class="modal-body form-body"> <span class="icon-position">16<sup>th</sup></span> <span class="badge-orange"><img id="maniacBadge" class="svg" src="img/badge.svg" alt=""/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+          <aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="earnPointsModal">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content modal-message">
+      <div class="modal-header">
+        <h5 class="modal-title">How do I Earn Points ?</h5>
+      </div>
+      <div class="modal-body">
+        <p>“Win points to get and keep your OCR Profile Card on the Home Page in the Top 10 Maniacs and to win monthly and annual prizes!  Every time you create new content for the OM community (e.g., publish and/or share an article, start a discussion or post pictures or videos), you get Maniac points.  The more points you gain, the more likely you are to win a prize.  Prizes are awarded monthly, so get started contributing content and sharing today!</p>
+        <p>Here’s a convenient list of the activities and points you earn by contributing to the OCR community on obstaclemaniac.com.”</p>
+        <h5>Profile Set Up</h5>
+        <ul class="ponts-disk">
+          <li>Complete Profile - 100 points (must include photo to get points)</li>
+          <li>Update your profile with a recent race - 10 points for each entry</li>
+          <li>Following an athlete - 5 points/athlete</li>
+          <li>Accepting a follower - 5 points/athlete</li>
+        </ul>
+        <h5>Articles</h5>
+        <ul class="ponts-disk">
+          <li>Authoring/Creating an article - 100 points</li>
+          <li>Sharing your article with Facebook - 50 points</li>
+          <li>Sharing your article with Twitter - 50 points</li>
+          <li>Commenting on an article - 5 points (max of 10 points awarded/article)</li>
+          <li>Sharing an article that someone else wrote on Facebook or Twitter 5 points each (max 20 points/article)</li>
+          <li>Getting a “Like” or a “Favorite” on an article you wrote - 5 point/like</li>
+        </ul>
+        <h5>Chat</h5>
+        <ul class="ponts-disk">
+          <li>Authoring at Chat - 50 points</li>
+          <li>Sharing your chat with Facebook - 25 points</li>
+          <li>Sharing your chat with Twitter - 25 points</li>
+          <li>Commenting on a chat - 5 points/comment (max of 15 points awarded/chat)</li>
+          <li>Sharing a chat on Facebook or Twitter 5 points each (max 15 points/chat)</li>
+        </ul>
+      </div>
+      <div class="modal-footer center-btns"><a class="btn-link" data-dismiss="modal">Back</a></div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="visible-xs"> <a class="has-notif" href="notification.html"><i class="icon-notification"></i> <span>Notifications</span></a></li>
+          <li class="dropdown hidden-xs"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-tabs-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <div class="nodata-panel">
+                      <div class="nodata-body"> <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small> </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link" href="notification.html">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile-about.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Settings</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a class="racereview"><span class="square"><i></i></span> <span class="label-text">Race Review</span> </a></li>
+                  <li><a class="trining"><span class="square"><i></i></span> <span class="label-text">Training</span> </a></li>
+                  <li><a class="obsreview"><span class="square"><i></i></span> <span class="label-text">Obstacle Review</span> </a></li>
+                  <li><a class="proreview"><span class="square"><i></i></span> <span class="label-text">Product Review</span> </a></li>
+                  <li><a class="inspiration"><span class="square"><i></i></span> <span class="label-text">Inspiration</span> </a></li>
+                  <li><a class="fuiling"><span class="square"><i></i></span> <span class="label-text">Fueling</span> </a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link" href="obstacle-library.html">View All</a></div>
+            </div>
+          </li>
+          <li><a data-toggle="globalSearch"><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+            <li><a href="dashboard.html">POST ARTICLES</a></li>
+            <li><a href="obstacle-chat.html">OBSTACLE CHAT</a></li>
+            <li><a class="scroll-link nextpage-scroll" data-rel="topOcrId">Top OCR Athletes</a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="global-search">
+      <div class="filter-action">
+        <div class="container">
+          <div class="dropdown no-overlay pull-left"> <a class="block" data-toggle="dropdown"><i class="icon-filter block"></i></a>
+            <div data-dropdown="onhold" class="dropdown-menu">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId2">
+                <label for="allId2">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId2">
+                <label for="articleId2">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId2">
+                <label for="chatId2">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId2">
+                <label for="videosId2">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId2">
+                <label for="photosId2">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span>
+          <div class="input-group"> <a class="input-group-addon"><i class="icon-search"></i></a>
+            <input type="text" placeholder="Quick Search" value="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="search-autosuggest scrollbox">
+        <div class="container">
+          <div class="row">
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">ARTICLES</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/default-category.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">CHAT</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">MEDIA</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading font-med">MANIACS</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- #EndLibraryItem -->
+<section class="main-section overflow" data-height="fullheight">
+  <figure class="blank-slide visible-1024"><img src="img/slide-blank.png" width="1600" height="400" alt=""/></figure>
+  <div id="topCarousel" class="carousel slide carousel-fade" data-scroll="blur" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#topCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#topCarousel" data-slide-to="1"></li>
+      <li data-target="#topCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active" data-interval="6000">
+        <figure class="backstretch"><img src="img/slide1.jpg" width="1600" height="400" alt=""/></figure>
+        <div class="carousel-caption">
+          <table class="carousel-container animated fadeInUp">
+            <tr>
+              <td class="text-right"><h2>obstacle maniac <br>
+                  <em>a new home for</em> <span class="yellow-text">OCR Athletes!</span></h2></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="item" data-interval="12000">
+        <figure class="backstretch"><img src="img/slide2.jpg" width="1600" height="400" alt=""/></figure>
+        <div class="carousel-caption">
+          <table class="carousel-container animated">
+            <tr>
+              <td class="text-right"><h2><span class="yellow-text">Learn &amp; share</span> <em>experiences</em> <br>
+                  <em>with the</em> like minded!</h2></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="item" data-interval="9000">
+        <figure class="backstretch"><img src="img/slide3.jpg" width="1600" height="400" alt=""/></figure>
+        <div class="carousel-caption">
+          <table class="carousel-container animated">
+            <tr>
+              <td class="text-right"><h2>place <em>where</em> <br>
+                  <span class="yellow-text">athletes</span> <em>help</em> <span class="yellow-text">athletes</span> <br>
+                  <em>become</em> better athletes</h2></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-margin="blur">
+    <div class="google-ads">
+      <div class="container">
+        <article>
+          <h3>Oh - It's So On<br>
+          </h3>
+          <p>We're Live in late July! with your new home for OCR.<br>
+            Enter your name and email on our contact page and we'll let you know when we're up and running!!!!</p>
+        </article>
+      </div>
+    </div>
+    <section class="bgcolor-primary">
+      <div class="container">
+        <div class="row sidebar-padd">
+          <div class="col-md-8 col-lg-9 home-stories-wrap">
+            <div class="main-padd">
+              <div class="" data-role="tabpanel">
+                <div class="clearfix">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#trendingStories" data-toggle="tab"><i class="icon-trending hidden-xs"></i> TRENDING STORIES</a></li>
+                    <li><a href="#latestStories" data-toggle="tab"><i class="icon-latest hidden-xs"></i> LATEST STORIES</a></li>
+                  </ul>
+                  <span class="right-action right-most-link"><a class="btn-link font-med"><i class="icon-addstory"></i><span class="">ADD YOUR STORY</span></a></span>
+                </div>
+                <div id="myTabContent" class="tab-content">
+                  <div class="tab-pane fade in active" id="trendingStories">
+                    <div class="home-stories-innr">
+                      <div class="scrollboxHome">
+                        <div class="grid-list row carousel-xs" data-role="carouselMobileNew">
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/img1.jpg" width="270" height="150" class="main-img" alt=""/></a>
+                                <label>INSPIRATION</label>
+                              </figure>
+                              <div class="caption">
+                                <h6><a>JEFF SHADY</a></h6>
+                                <p><a>Congratulations to the Top 3 Elite Men and Women Finishers...</a></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-fueling" data-placeholder="FUELING"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/default-category.jpg" width="270" height="150" class="main-img" alt=""/></a></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-obstacle" data-placeholder="OBSTACLE REVIEW"><img src="img/default-category.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-product" data-placeholder="PRODUCT REVIEW"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/img1.jpg" width="270" height="150" class="main-img" alt=""/></a>
+                                <label>INSPIRATION</label>
+                              </figure>
+                              <div class="caption">
+                                <h6><a>JEFF SHADY</a></h6>
+                                <p><a>Congratulations to the Top 3 Elite Men and Women Finishers...</a></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-fueling" data-placeholder="FUELING"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/default-category.jpg" width="270" height="150" class="main-img" alt=""/></a></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-obstacle" data-placeholder="OBSTACLE REVIEW"><img src="img/default-category.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-product" data-placeholder="PRODUCT REVIEW"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="latestStories">
+                    <div class="home-stories-innr">
+                      <div class="scrollboxHome">
+                        <div class="grid-list row carousel-xs" data-role="carouselMobileNew1">
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/img1.jpg" width="270" height="150" class="main-img" alt=""/></a>
+                                <label>INSPIRATION</label>
+                              </figure>
+                              <div class="caption">
+                                <h6><a>JEFF SHADY</a></h6>
+                                <p><a>Congratulations to the Top 3 Elite Men and Women Finishers...</a></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-fueling" data-placeholder="FUELING"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/default-category.jpg" width="270" height="150" class="main-img" alt=""/></a></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-obstacle" data-placeholder="OBSTACLE REVIEW"><img src="img/default-category.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-product" data-placeholder="PRODUCT REVIEW"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/img1.jpg" width="270" height="150" class="main-img" alt=""/></a>
+                                <label>INSPIRATION</label>
+                              </figure>
+                              <div class="caption">
+                                <h6><a>JEFF SHADY</a></h6>
+                                <p><a>Congratulations to the Top 3 Elite Men and Women Finishers...</a></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-fueling" data-placeholder="FUELING"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/default-category.jpg" width="270" height="150" class="main-img" alt=""/></a></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-obstacle" data-placeholder="OBSTACLE REVIEW"><img src="img/default-category.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail new">
+                              <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JEFF SHADY</h6>
+                                <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                              <figure class="catbadge-product" data-placeholder="PRODUCT REVIEW"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+                              <div class="caption">
+                                <h6>JOSHUA Z WONITZER</h6>
+                                <p>Rest day reflection and planning check out my latest...</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-padd photo-competition">
+              <div class="grid-row">
+                <div class="clearfix heading">
+                  <h5 class="pull-left">Photo Competition</h5>
+                  <span class="right-action"><a class="btn-link font-med"><i class="icon-addphoto"></i><span class="">ADD YOUR PHOTO</span></a></span>
+                </div>
+                <div class="grid-list row carousel-xs" data-role="carouselMobileNew">
+                  <div class="col-sm-4 col-lg-4">
+                    <div class="thumbnail thumbnail-primary">
+                      <figure><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/default-category.jpg" width="270" height="150" class="main-img" alt=""/></a>
+                      <div class="social-action action-default">   
+                        <a class="msg-count">200</a> 
+                        <a class="like-count">245</a> 
+                      </div>
+                      </figure>
+                      <div class="caption">
+                        <div class="media">
+                          <div class="media-left"><img width="44" height="44" alt="" class="img-rounded" src="img/thumb36x36.jpg"></div>
+                          <div class="media-body media-middle"> <span class="font-med">JENNIFER WOODS</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-4">
+                    <div class="thumbnail thumbnail-primary">
+                      <figure><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/default-category.jpg" width="270" height="150" class="main-img" alt=""/></a>
+                      <div class="social-action action-default">   
+                        <a class="msg-count">200</a> 
+                        <a class="like-count">245</a> 
+                      </div>
+                      </figure>
+                      <div class="caption">
+                        <div class="media">
+                          <div class="media-left"><img width="44" height="44" alt="" class="img-rounded" src="img/thumb36x36.jpg"></div>
+                          <div class="media-body media-middle"> <span class="font-med">JOSHUA Z WONITZER</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-lg-4">
+                    <div class="thumbnail thumbnail-primary">
+                      <figure>
+                        <img src="img/default-category.jpg" width="270" height="150" alt=""/>
+                        <div class="social-action action-default">   
+                          <a class="msg-count">200</a> 
+                          <a class="like-count">245</a> 
+                        </div>
+                      </figure>
+                      <div class="caption">
+                        <div class="media">
+                          <div class="media-left"><img width="44" height="44" alt="" class="img-rounded" src="img/thumb36x36.jpg"></div>
+                          <div class="media-body media-middle"> <span class="font-med">LAWRENCE THOMPSON</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-padd main-padd20 top-listings">
+              <div class="grid-row">
+                <div class="clearfix heading">
+                   <span class="right-action selectbox-all">
+                    <select class="form-control" data-chosen>
+                      <option>Show All</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                   </span>
+                  <h5 class="pull-left padd-tb-7">Top 10 Maniacs</h5>
+                </div>
+                <div class="row grid-list carousel-xs" data-role="carouselMobile">
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure>
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <a class="overlay" href="profile-about.html"><img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/default-user.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb2.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb2.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square unfollow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square follow"><i></i></span> <span class="text">Follow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb2.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="thumbnail thumbnail-default">
+                      <div class="caption">
+                        <h3 class="orange-text star-count">4858</h3>
+                        <span class="badge-orange"><img class="svg" src="img/badge.svg" alt=""/>4K</span> <span class="follower">999+ <small>FOLLOWERS</small></span> </div>
+                      <figure class="overlay">
+                        <div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+                          <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                        </div>
+                        <img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                          OCR ATHLETE</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="col-md-4 col-lg-3 sidebar sidebar-another">
+            <div class="main-padd">
+              <div class="grid-row">
+                <div class="clearfix heading">
+                  <h5>Monthly competition</h5>
+                </div>
+                <div class="thumbnail thumbnail-primary">
+                  <div class="caption">
+                    <h4 class="mar-0 green-text">DECEMBER CONTEST <small class="block">MOST PHOTOGENIC RACE PHOTO</small></h4>
+                  </div>
+                  <figure> <a class="overlay" href="monthly-competition.html"><img src="img/thumbnail.jpg" width="264" height="140" alt=""/></a>
+                    <div class="social-action action-default"> <a class="action"><i class="icon-fb-white"></i></a> <a class="action"><i class="icon-ttr-white"></i></a> </div>
+                  </figure>
+                  <div class="caption"> Submit your best race photo to win Points &amp; Badge! </div>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="clearfix heading mar-0">
+                  <h5 class="pull-left padd-tb-7">OBSTACLE MANIAC NEWS</h5>
+                  <aside class="filter-wrap right-action">
+                    <div class="filter-action pull-right">
+                      <div class="dropdown no-overlay"> <a data-toggle="dropdown" class="btn btn-32"><i class="icon-filter-sm"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li>
+                            <a href="javascript:void(0);">User</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0);">Type</a>
+                          </li>                                  
+                          <li>
+                            <a href="javascript:void(0);">Date</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0);">Mentions</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+                <div class="panel bor-radius-0">
+                  <div class="scrollbox panel-scroll-sidebar">
+                    <ul class="user-list userlist-secondary">
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-article-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> posted a new article <a class="btn-link">I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-chat-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Danial lee</a> started a new discussion <a class="btn-link">I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-photos-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Alex Helse</a> posted 2 new photos <a class="btn-link"> I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-article-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> posted a new article <a class="btn-link">I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-chat-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Danial lee</a> started a new discussion <a class="btn-link">I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-photos-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Alex Helse</a> posted 2 new photos <a class="btn-link"> I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-article-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> posted a new article <a class="btn-link">I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-chat-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Danial lee</a> started a new discussion <a class="btn-link">I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-photos-sm"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Alex Helse</a> posted 2 new photos <a class="btn-link"> I Run Like Ryan Atkins and Amelia Boone</a></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-row">
+                <div class="clearfix heading mar-0">
+                  <h5 class="pull-left padd-tb-7">OCR NEWS</h5>
+
+                  <aside class="filter-wrap right-action">
+                    <div class="filter-action pull-right">
+                      <div class="dropdown no-overlay"> <a data-toggle="dropdown" class="btn btn-32"><i class="icon-filter-sm"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li>
+                            <a href="javascript:void(0);">User</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0);">Type</a>
+                          </li>                                  
+                          <li>
+                            <a href="javascript:void(0);">Date</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0);">Mentions</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </aside>
+                  <span class="right-action btn-new"><a href="javascript:void(0);" class="btn btn-primary btn-sm">Add A New Story</a></span>
+                </div>
+                <div class="panel bor-radius-0">
+                  <div class="scrollbox panel-scroll-sidebar-chat">
+                    <ul class="user-list userlist-primary">
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left">
+                          <a href="javascript:void(0);"><i class="icon-calendar-black"></i></a>
+                        </div>
+                        <div class="media-body">
+                          <div class="font-med font-basic"><a class="btn-link">Jack</a> shared <a class="btn-link">Spartan race enrollment</a> in <a class="btn-link">Upcoming Events.</a></div>
+                        </div>
+                        <div class="media-right">
+                          <a href="javascript:void(0);"><i class="icon-open-chat"></i></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-row sidebar-photos">
+                <!-- <div class="clearfix heading mar-0 visible-xs">
+                  <h5 class="pull-left padd-tb-7">PHOTO COMPETITION</h5>
+                </div> -->
+                <div class="grid-list carousel-xs" data-role="carouselMobileNew">
+                  <div class="adv-thumbnail large">
+                    <a><img width="300" height="600" alt="" src="img/sidebar1.jpg"></a>
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="grid-row sidebar-photos">
+                <div class="grid-list carousel-xs" data-role="carouselMobileNew">
+                  <div class="adv-thumbnail medium">
+                    <a><img width="300" height="250" alt="" src="img/sidebar3.jpg"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="bgimg-ocr main-padd zIndex5" id="topOcrId">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 grid-row">
+            <div class="panel panel-primary panel-topOcr" data-role="tabpanel">
+              <div class="panel-heading text-center">
+                <div class="years-tab">
+                  <h4 class="title"><a class="active">2016</a> Top OCR Leaders</h4>
+                  <h5 class="title"><a >2015</a> Results</h5>
+                </div>
+                <a class="btn-link font-sm" data-target="#topOcrModal" data-toggle="modal">How We Award Points</a>
+                <span class="active-tab">Elite Athlete</span>
+                <div class="nav nav-tabs owl-carousel" data-role="carouselOCR"> <a class="item active" data-toggle="tab" href="#OCRTab1">Elite Athlete</a> <a class="item" data-toggle="tab" href="#OCRTab2">20 &amp; Under</a> <a class="item" data-toggle="tab" href="#OCRTab3">20 - 24</a> <a class="item" data-toggle="tab" href="#OCRTab4">25 - 29</a> <a class="item" data-toggle="tab" href="#OCRTab5">30 - 34</a> <a class="item" data-toggle="tab" href="#OCRTab6">34 - 50</a> <a class="item" data-toggle="tab" href="#OCRTab7">50 &amp; Over</a> </div>
+              </div>
+              <div class="tab-content">
+                <div id="OCRTab1" class="tab-pane fade in active">
+                  <div class="panel-body">
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd">
+                      <ul class="timeline">
+                        <li data-placeholder="1">
+                          <div class="timeline-panel"> Jason Khalipa <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Leah Holloway <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="2">
+                          <div class="timeline-panel"> Hobie Cal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Charlie Simmons <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="3">
+                          <div class="timeline-panel"> Rob Goodson <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Lynnae Kettler <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="4">
+                          <div class="timeline-panel"> Hobie Vidal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Isaiah Vidal <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="5">
+                          <div class="timeline-panel"> Corin Coffin <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Jolly Mcdonald <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="OCRTab2" class="tab-pane fade">
+                  <div class="panel-body">
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd nodata-panel">
+                      <div class="nodata-body"> <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small> </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="OCRTab3" class="tab-pane fade">
+                  <div class="panel-body">
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd">
+                      <ul class="timeline">
+                        <li data-placeholder="1">
+                          <div class="timeline-panel"> Jason Khalipa <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Leah Holloway <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="2">
+                          <div class="timeline-panel"> Hobie Cal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Charlie Simmons <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="3">
+                          <div class="timeline-panel"> Rob Goodson <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Lynnae Kettler <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="4">
+                          <div class="timeline-panel"> Hobie Vidal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Isaiah Vidal <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="5">
+                          <div class="timeline-panel"> Corin Coffin <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Jolly Mcdonald <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="OCRTab4" class="tab-pane fade">
+                  <div class="panel-body">
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd nodata-panel">
+                      <div class="nodata-body"> <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small> </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="OCRTab5" class="tab-pane fade">
+                  <div class="panel-body">
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd">
+                      <ul class="timeline">
+                        <li data-placeholder="1">
+                          <div class="timeline-panel"> Jason Khalipa <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Leah Holloway <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="2">
+                          <div class="timeline-panel"> Hobie Cal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Charlie Simmons <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="3">
+                          <div class="timeline-panel"> Rob Goodson <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Lynnae Kettler <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="4">
+                          <div class="timeline-panel"> Hobie Vidal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Isaiah Vidal <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="5">
+                          <div class="timeline-panel"> Corin Coffin <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Jolly Mcdonald <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="OCRTab6" class="tab-pane fade">
+                  <div class="panel-body">
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd nodata-panel">
+                      <div class="nodata-body"> <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small> </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="OCRTab7" class="tab-pane fade">
+                  <div class="panel-body"> 
+                    <ul class="social-icons">
+                      <li><a class="icon-facebook"></a></li>
+                      <li><a class="icon-twitter"></a></li>
+                    </ul>
+                    <div class="main-padd">
+                      <ul class="timeline">
+                        <li data-placeholder="1">
+                          <div class="timeline-panel"> Jason Khalipa <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Leah Holloway <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="2">
+                          <div class="timeline-panel"> Hobie Cal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Charlie Simmons <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="3">
+                          <div class="timeline-panel"> Rob Goodson <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Lynnae Kettler <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="4">
+                          <div class="timeline-panel"> Hobie Vidal <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Isaiah Vidal <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                        <li data-placeholder="5">
+                          <div class="timeline-panel"> Corin Coffin <span class="orange-text font-normal">85662</span> </div>
+                          <div class="timeline-panel"> Jolly Mcdonald <span class="orange-text font-normal">85112</span> </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a href="about.html">About us</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="help-and-support.html">Help &amp; Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="advertise.html">Advertise with us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem -->
+<div id="topOcrModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">OM Point Series - Beta</h5>
+      </div>
+      <div class="modal-body form-body">
+        <p>At Obstaclemaniac we're always about the community - a community that spans more than just the elite athletes. So, when it comes to our points series we track elite athletes and leaders by age group. Our point series begins on January 1st of every year. The current point totals reflect a start date of January 1st, 2015.</p>
+        <p>Races We Currently Track: We track races that report statistics by age group. This will expand as we improve our tools.</p>
+        <p>- Spartan Race<br>
+          - BattleFrog<br>
+          - Atlas Race</p>
+        <p>How We Award Points: ObstacleManiac "normalizes" points across elite and open races. If you run elite, but don't place in the top 5, your time rolls over to the age-group point series. If however you run elite and place in the top 5, your points are awarded for elite only. Racers can only be awarded points for elite or open - not both in any single race. For age groups, we calculate points based on your name and age when you sign up for races. We realize that there are cases where an individual's birthday falls into two age groups during a year (a 24 year old on Jan 1, 2015 turning 25 in August). Points will be awarded in a single age group determined by your age on Jan 1st of each year.</p>
+        <h5>Elite Points:</h5>
+        <p>1st - 5 points; 2nd - 4 points; 3rd - 3 points; 4th - 2 points; 5th - 1 point</p>
+        <p>Age Group Points (Under 20, 20-24, 25-29; 30-34; 35-39; 40-44; 45-49; 50-54; 55-59; 60 and up)</p>
+        <p>1st - 5 points; 2nd - 4 points; 3rd - 3 points; 4th - 2 points; 5th - 1 point</p>
+        <p>Each year represents a new start and there are no point carryovers. This gives everyone a fresh opportunity to be on top of their age groups. The more races you run, the more points you earn. So get your OCR on!</p>
+        <p>We're always looking for feedback on our model so don't hold back. Tell us what you think!?</p>
+      </div>
+      <div class="modal-footer center-btns"><a data-dismiss="modal" class="btn-link">Back</a></div>
+    </div>
+  </div>
+</div>
+<div id="subscribeModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">SIGN UP TO GET YOUR WEEKLY OCR NEWSLETTER!</h4>
+      </div>
+      <div class="modal-body form-body subscribe-popup">
+        <p class="lead">Get access to the latest Race Reviews, Inspirational articles and upcoming events!</p>
+        <div class="form-group">
+          <div class="control-label">NAME <span class="mandatory">*</span></div>
+          <input type="text" placeholder="Enter your name" class="form-control">
+        </div>
+        <div class="form-group">
+          <div class="control-label">EMAIL ADDRESS <span class="mandatory">*</span></div>
+          <input type="email" placeholder="Enter your email ID" value="" class="form-control">
+        </div>
+        <div class="row form-action">
+          <aside class="col-sm-5 pull-right"><a class="btn btn-primary btn-block" data-multi="modal" data-toggle="modal" data-target="#subThankuModal">SUBSCRIBE</a></aside>
+          <aside class="col-sm-7 text-link text-right"><a class="btn-link" data-dismiss="modal">No Thanks</a></aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="subThankuModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">THANKS FOR SIGNING UP!</h4>
+      </div>
+      <div class="modal-body form-body subscribe-popup">
+        <h4 class="text-center font-normal">Now tell your friends about the <span class="orange-text">ObstacleManiac</span> community!</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/angular.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/chosen-min.js"></script> 
+<script src="js/main.js"></script> 
+<script src="js/Controllers.js"></script> 
+<script>
+$(function () {
+  $('.ads-carousel').owlCarousel({
+    loop:true,
+    smartSpeed:450,
+    responsiveClass:true,
+    autoplay:true,
+    autoplayTimeout:30000,
+    nav:false,
+    items:1
+  });
+
+	thumbCarousel('[data-role="carousel"]', 1, 1, 1, true, true, true);
+	autoThumbCarousel('[data-role="carouselSingle"]', 1, 2, 1, true);
+	$(window).resize(function(){
+	  if($(window).width() > 767 && $(window).width() < 992){
+		if($('[data-role="carouselSingle"] .item').length > 2){
+			autoThumbCarousel('[data-role="carouselSingle"]', 1, 2, 1, true);
+			$('[data-role="carouselSingle"]').parent().removeClass('col-sm-4');
+		} else {
+			$('[data-role="carouselSingle"]').removeClass('owl-carousel');
+			$('[data-role="carouselSingle"]').parent().addClass('col-sm-4');
+		}
+	  } else {
+		$('[data-role="carouselSingle"]').parent().removeClass('col-sm-4');
+		if($('[data-role="carouselSingle"] .item').length > 1){
+			autoThumbCarousel('[data-role="carouselSingle"]', 1, 2, 1, true);
+		} else {
+			$('[data-role="carouselSingle"]').removeClass('owl-carousel');
+		}
+	  }
+	}).resize();
+	
+	autoThumbCarousel('[data-role="carouselOCR"]', 1, 4, 4, false);
+	OCRTabFn();
+	
+	$('.panel-topOcr .nav-tabs a').click(function(){
+		OCRTabFn();
+		$('.panel-topOcr .nav-tabs .item').removeClass('active');
+		$(this).addClass('active');
+		$('.panel-topOcr .active-tab').text($(this).text());
+	});
+	$('.panel-topOcr .owl-nav > div').click(function() {
+		$('.panel-topOcr .nav-tabs .owl-item.owl-active').unbind('click');
+    });
+	
+});
+/*Animation Scroll*/
+$(function(){
+  if($('#topOcrId').length>0){
+	scrollToDestination();
+  
+	$(window).scroll(function(){
+	  if($(window).scrollTop() > $('#topOcrId').offset().top-70 || $(window).scrollTop() + $(window).height() == $(document).height()){
+		$('[data-rel="topOcrId"]').parent().addClass('active');
+	  } else {
+		$('[data-rel="topOcrId"]').parent().removeClass('active');
+	  }
+	}).scroll();
+  }
+  gotToTopOcr();
+});
+/*End*/
+
+function getParameterByName(name){
+	var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+	return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+function gotToTopOcr(){
+  var tabId = getParameterByName('tab');
+  if(tabId=="topOcrId"){
+	 $('html, body').animate({scrollTop: $('#topOcrId').offset().top-60}, 800);
+  }
+}
+
+setTimeout(function(){
+	if($(window).width() > 767){
+		$('#subscribeModal, #subThankuModal').on('show.bs.modal', centerModal);
+	}
+	//$('#subscribeModal').modal();
+},4000);
+
+$('#subThankuModal').on('shown.bs.modal',function(){
+	setTimeout(function(){
+		$('#subThankuModal').modal('hide');
+	},5000);
+});
+</script>
+<script>
+$(document).ready(function() {
+  $(".responsive-tabs").responsiveTabs();
+  handleCheckAll();
+});
+</script>
+</body>
+</html>

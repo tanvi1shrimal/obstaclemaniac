@@ -1,0 +1,584 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/Library/header-after-login.lbi" --> 
+<!--Popup Start-->
+<div id="inviteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content flipContainer">
+      <div class="messages-panel flip-panel" id="inviteFlip">
+        <div class="modal-body form-body">
+          <figure class="figure-panel"><img src="img/invite.png" width="60" height="60" alt=""/></figure>
+          <h3 class="font-normal">Invite Whoever’s Missing!</h3>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" value="" placeholder="Add Email ID">
+            <div class="input-group-btn"><a class="btn btn-danger btn-icon"><i class="icon-google"></i> <i class="icon-info" data-toggle="tooltip" data-placement="left" title="Lorem Ipsum is simply dummy text of the printing"></i></a></div>
+          </div>
+          <p><a class="btn btn-primary flipLink" data-rel="sendInviteFlip">SEND INVITE</a></p>
+          <a class="btn-link flipLink" data-rel="invitePreviewFlip">Preview</a> </div>
+        <div class="modal-footer">We do not email your contacts <br>
+          without your permission</div>
+      </div>
+      <div class="messages-panel flip-panel flipHide" id="invitePreviewFlip">
+        <div class="modal-body form-body">
+          <figure class="figure-panel"><img src="img/invite.png" width="60" height="60" alt=""/></figure>
+          <h3 class="font-normal">Invitation Preview</h3>
+          <div class="text-left">
+            <p>Hi there,<br>
+              John Smith has invited you to obstaclemaniac.com</p>
+            <p>Here athletes help athletes become better athletes.
+              Learn what like minded OCR have to say</p>
+          </div>
+        </div>
+        <div class="modal-footer"><a class="btn-link flipLink" data-rel="inviteFlip">Back to Invite</a></div>
+      </div>
+      <div class="messages-panel flip-panel flipHide" id="sendInviteFlip">
+        <div class="modal-body form-body">
+          <figure class="figure-panel"><img src="img/invite.png" width="60" height="60" alt=""/></figure>
+          <h3 class="font-normal">Thanks for Sharing!</h3>
+          <p>Your invitation has been sent. We hope your friend likes Obstacle Maniac &amp; benefits from it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="maniacPointsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h4 class="modal-title">MANIAC POINTS</h4>
+      </div>
+      <div class="modal-body form-body"> <span class="icon-position">16<sup>th</sup></span> <span class="badge-yellow"><img id="maniacBadge" class="svg" src="img/badge.svg"/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+          <aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="dropdown"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i> <span class="visible-xs-inline">Notifications</span></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped font-sm">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <ul class="media-list media-list-striped font-sm">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb50x50.jpg" class="img-rounded" width="50" height="50" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Setting</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a><span class="square"><i class="icon-race"></i></span>Race Review</a></li>
+                  <li><a><span class="square"><i class="icon-training"></i></span>Training</a></li>
+                  <li><a><span class="square"><i class="icon-obstacle"></i></span>Obstacle Review</a></li>
+                  <li><a><span class="square"><i class="icon-product"></i></span>Product Review</a></li>
+                  <li><a><span class="square"><i class="icon-inspiration"></i></span>Inspiration</a></li>
+                  <li><a><span class="square"><i class="icon-fueling"></i></span>Fueling</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link">View All</a></div>
+            </div>
+          </li>
+          <li><a><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+            <li><a href="404.html">POST ARTICLES</a></li>
+            <li><a href="404.html">OBSTACLE CHAT</a></li>
+            <li><a href="404.html">TOP OCR<small>S</small></a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="404.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- #EndLibraryItem -->
+<section class="main-section bgcolor-primary" data-height="fullheight">
+  <div class="cover-container overlay">
+    <figure class="cover-image"><img src="img/cover-img.jpg" class="img-full" width="1600" height="350" alt=""/></figure>
+    <div class="edit-cover">
+      <div class="container"><a class="edit-btn"><i class="icon-edit"></i></a></div>
+    </div>
+    <div class="profile-details">
+      <div class="container">
+        <figure class="profile-pic">
+        	<a class="edit-btn file-upload"><i class="icon-edit"></i><input type="file"></a>
+        	<img src="img/user-pic.jpg" class="img-thumbnail" alt=""/>
+        </figure>
+        <div class="right-action">
+        	<div class="dropdown no-overlay follow-unfollow"> <a class="square follow" data-toggle="dropdown"><i></i></a>
+              <div class="dropdown-menu"><a><span class="square unfollow"><i></i></span> <span class="text">Unfollow</span></a></div>
+            </div>
+            <a class="square message"><i class="icon-email"></i></a>
+        </div>
+        <div class="details">
+          <h3 class="title">John Smith <small>Beginner</small></h3>
+          <ul class="nav nav-pills">
+            <li>Male</li>
+            <li>30-40 Years</li>
+            <li>Virginia, USA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inner">
+    <div class="container">
+      <div class="navbar-header hidden-xs">&nbsp;</div>
+      <ul class="nav navbar-nav">
+          <li class="active"><a>ABOUT</a></li>
+          <li><a>CONNECTIONS <small>(999+)</small></a></li>
+          <li><a>POSTS <small>(489+)</small></a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="content-section">
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-3 col-md-push-9">
+          <div class="row">
+            <div class="col-sm-5 col-lg-12 col-md-12 col-xs-12">
+              <div class="row">
+                <div class="col-xs-4 badges-group monthly"> <span class="badge-yellow"><img id="maniacBadge" class="svg" src="img/badge.svg"/>4K</span> <span class="point">343</span> <span class="duration">MONTH</span> </div>
+                <div class="col-xs-4 badges-group yearly"> <span class="badge-red"><img id="maniacBadge" class="svg" src="img/badge.svg"/>3K</span> <span class="point">676</span> <span class="duration">YEAR</span> </div>
+                <div class="col-xs-4 badges-group overall"> <span class="badge-blue"><img id="maniacBadge" class="svg" src="img/badge.svg"/>2K</span> <span class="point">384</span> <span class="duration">OVER ALL</span> </div>
+              </div>
+              <hr class="img-line">
+            </div>
+            <div class="col-sm-7 col-lg-12 col-md-12 col-xs-12">
+              <h6 class="light-gray">PROUD TO BE SPONSORED BY</h6>
+              <ul class="group-list clearfix">
+                <li><img src="img/sponsore1.jpg" width="134" height="60" alt=""/></li>
+                <li><img src="img/sponsore2.jpg" width="134" height="60" alt=""/></li>
+                <li><img src="img/sponsore3.jpg" width="134" height="60" alt=""/></li>
+                <li><img src="img/sponsore4.jpg" width="134" height="60" alt=""/></li>
+              </ul>
+              <h6 class="light-gray mar-top-20">More!</h6>
+              <ul class="tags-pill clearfix mar-bottom-20">
+                <li>
+                  <div class="tags"><span>Reebok</span></div>
+                </li>
+                <li>
+                  <div class="tags"><span>Addidas</span></div>
+                </li>
+                <li>
+                  <div class="tags"><span>Nike</span></div>
+                </li>
+                <li>
+                  <div class="tags"><span>Splanding</span></div>
+                </li>
+                <li>
+                  <div class="tags"><span>Gatorade</span></div>
+                </li>
+                <li>
+                  <div class="tags"><span>RedBull</span></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <div class="col-md-9 col-md-pull-3">
+          <div class="panel panel-primary">
+            <div class="panel-body trophy-list">
+              <div class="icons-toolbar clearfix"> <span class="icons-group"><i class="icon-trophy1"></i></span> <span class="icons-group"><i class="icon-trophy2"></i></span> <span class="icons-group"><i class="icon-trophy3"></i></span> <span class="icons-group"><i class="icon-trophy4"></i></span> <span class="icons-group"><i class="icon-trophy5"></i></span> <span class="icons-group"><i class="icon-trophy6"></i></span> <span class="icons-group"><i class="icon-trophy7"></i></span> </div>
+            </div>
+          </div>
+          <div class="heading"> <span class="right-action"><a href="settings.html" class="edit-btn"><i class="icon-edit"></i></a></span>
+            <h5>BASIC INFO</h5>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-body basic-info">
+              <p>I have been hooked on OCR since my first Spartan Race (Brisbane, June 2013).  I was carrying an injury coming in to the event so I put my hand up to be an obstacle volunteer, so I could at least be a part of the day that I had been training for.  Plus the free race for volunteering was a nice bonus.  I had more fun than I’d had in years, both while volunteering and out on the course for my own run.</p>
+              <p>Since that day I have volunteered and run in an obstacle race about every 4 weeks.  I love getting “behind the scenes”.  Volunteering has connected me to the wonderful OCR community.</p>
+              <p>OCR has changed me from an unhealthy out of shape couch potato to the point where I no longer cringe if I see a photo of myself with my shirt off.  I want to make sure that these events stick around so they can be an incentive for other people, as they were for me.  Pay it forward.</p>
+              <ul class="row favourite-list">
+                <li class="col-sm-6">
+                  <div class="media">
+                    <div class="media-left"><img src="img/fav-shoes.jpg" width="48" height="40" alt=""/></div>
+                    <div class="media-body">
+                      <h6 class="mar-0 light-gray">FAVOURITE RUNNING SHOES</h6>
+                      <span>Nike -Ultra Comfort</span> </div>
+                  </div>
+                </li>
+                <li class="col-sm-6">
+                  <div class="media">
+                    <div class="media-left"><img src="img/fav-clothes.jpg" width="48" height="40" alt=""/></div>
+                    <div class="media-body">
+                      <h6 class="mar-0 light-gray">FAVOURITE CLOTHING  BRAND</h6>
+                      <span>Izod</span> </div>
+                  </div>
+                </li>
+                <li class="col-sm-6">
+                  <div class="media">
+                    <div class="media-left"><img src="img/occupation-ico.jpg" width="48" height="40" alt=""/></div>
+                    <div class="media-body">
+                      <h6 class="mar-0 light-gray">OCCUPATION</h6>
+                      <span>Sports Gadgets Manufacturer</span> </div>
+                  </div>
+                </li>
+                <li class="col-sm-6">
+                  <div class="media">
+                    <div class="media-left"><img src="img/racing.jpg" width="48" height="48" alt=""/></div>
+                    <div class="media-body">
+                      <h6 class="mar-0 light-gray">FAVOURITE RACING COMPANY</h6>
+                      <span>International Speedway Corporation</span> </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <div class="heading"> <span class="right-action"><a href="settings.html" class="edit-btn"><i class="icon-edit"></i></a></span>
+            <h5>RACES</h5>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-body basic-info">
+              <div class="table-responsive-custom race-table">
+                <table class="table table-condensed table-striped">
+                  <thead>
+                    <tr>
+                      <th colspan="3">2015</th>
+                      <th class="inner-table hidden-xs"> <table class="table">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                        </table></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                      <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                        <span class="light-gray font-sm">California, US</span></td>
+                      <td>May 10, 2015</td>
+                      <td class="inner-table"><table class="table font-md font-light">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>16</td>
+                              <td>769</td>
+                              <td>1,019</td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                    <tr>
+                      <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                      <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                        <span class="light-gray font-sm">California, US</span></td>
+                      <td>May 10, 2015</td>
+                      <td class="inner-table"><table class="table font-md font-light">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>16</td>
+                              <td>769</td>
+                              <td>1,019</td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                    <tr>
+                      <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                      <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                        <span class="light-gray font-sm">California, US</span></td>
+                      <td>May 10, 2015</td>
+                      <td class="inner-table"><table class="table font-md font-light">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>16</td>
+                              <td>769</td>
+                              <td>1,019</td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-condensed table-striped">
+                  <thead>
+                    <tr>
+                      <th colspan="3">2014</th>
+                      <th class="inner-table hidden-xs"> <table class="table">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                        </table></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                      <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                        <span class="light-gray font-sm">California, US</span></td>
+                      <td>May 10, 2015</td>
+                      <td class="inner-table"><table class="table font-md font-light">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>16</td>
+                              <td>769</td>
+                              <td>1,019</td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                    <tr>
+                      <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                      <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                        <span class="light-gray font-sm">California, US</span></td>
+                      <td>May 10, 2015</td>
+                      <td class="inner-table"><table class="table font-md font-light">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>16</td>
+                              <td>769</td>
+                              <td>1,019</td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                    <tr>
+                      <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                      <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                        <span class="light-gray font-sm">California, US</span></td>
+                      <td>May 10, 2015</td>
+                      <td class="inner-table"><table class="table font-md font-light">
+                          <thead>
+                            <tr>
+                              <td colspan="3">Position</td>
+                            </tr>
+                            <tr>
+                              <th>Age Group</th>
+                              <th>Gender</th>
+                              <th>Overall</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>16</td>
+                              <td>769</td>
+                              <td>1,019</td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li role="presentation"><a href="about.html">About us</a></li>
+      <li role="presentation"><a href="privacy.html">Privacy</a></li>
+      <li role="presentation"><a href="404.html">Help &amp; Support</a></li>
+      <li role="presentation"><a href="contact.html">Contact us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; copy 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem --><script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+</script>
+</body>
+</html>

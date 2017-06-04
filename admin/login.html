@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Common admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+  	
+
+    <section class="page-wrpper">
+    	
+        <aside class="content-wrapper">
+        	<div class="admin-login">
+            	<table class="admin-log">
+                	<tr>
+                    	<td>
+                      		<div class="block-region text-center">
+                                <a href="javascript:void(0);"><img src="img/logo.png" alt=""></a>
+                            </div> 
+                            
+                            <div class="form-block">
+                            	<div class="form-title">ADMIN AREA LOGIN</div>
+                                <div class="form-content">
+                                	
+                                    <div class="form-control">
+                                        <div class="text-field" data-type="focus">
+                                            <label for="Username">Username</label>
+                                            <input type="text" id="Username">
+                                        </div>
+                                        <div class="error-holder"><span>Please enter a valid username.</span></div>
+                                    </div>
+                                     <div class="form-control">
+                                        <div class="text-field" data-type="focus">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password">
+                                        </div>
+                                        <div class="error-holder"><span>Invalid email or password.</span></div>
+                                    </div>
+                                     <div class="form-control">
+                                     	<input type="button" value="LOGIN" class="button" onClick="window.location='users.html'">
+                                     </div>
+                                 </div>
+                            </div>
+                          </td>
+                    </tr>
+                 </table>
+            </div>
+           <div class="clearfix"></div>
+        </aside>
+
+
+      <div class="pushfooter"></div>  
+     </section>
+
+    
+<section class="footer-wrapper">
+  <footer>
+  <ul class="footer-links">
+  <li><a href="sitemap.html">Sitemap</a></li>
+  </ul>
+    <div class="powered-by">
+      <label>POWERED BY </label>
+      <a href="javascript:void(0);" class="icon-vinfotech-logo">&nbsp;</a> </div>
+  </footer>
+</section>  
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+<script src="js/vendor/jquery-ui.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    	$(function(){
+			var winHeight = $(window).height()-110;
+ 			$('.admin-login').height(winHeight);
+		});
+		
+		$(window).resize(function(){
+			var winHeight = $(window).height()-110;
+ 			$('.admin-login').height(winHeight);
+		});
+     
+    </script>
+</body>
+</html>

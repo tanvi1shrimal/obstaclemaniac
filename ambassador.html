@@ -1,0 +1,670 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body><!-- #BeginLibraryItem "/Library/header-after-login.lbi" -->
+<!--Popup Start-->
+<div id="maniacPointsModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h5 class="modal-title">MANIAC POINTS</h5>
+        <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a>
+      </div>
+      <div class="modal-body form-body">
+      	<span class="icon-position">16<sup>th</sup></span>
+        <span class="badge-orange"><img id="maniacBadge" class="svg" src="img/badge.svg" alt=""/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+      		<aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+        	<aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="earnPointsModal">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content modal-message">
+      <div class="modal-header">
+        <h5 class="modal-title">How do I Earn Points ?</h5>
+      </div>
+      <div class="modal-body">
+        <p>“Win points to get and keep your OCR Profile Card on the Home Page in the Top 10 Maniacs and to win monthly and annual prizes!  Every time you create new content for the OM community (e.g., publish and/or share an article, start a discussion or post pictures or videos), you get Maniac points.  The more points you gain, the more likely you are to win a prize.  Prizes are awarded monthly, so get started contributing content and sharing today!</p>
+        <p>Here’s a convenient list of the activities and points you earn by contributing to the OCR community on obstaclemaniac.com.”</p>
+        <h5>Profile Set Up</h5>
+        <ul class="ponts-disk">
+          <li>Complete Profile - 100 points (must include photo to get points)</li>
+          <li>Update your profile with a recent race - 10 points for each entry</li>
+          <li>Following an athlete - 5 points/athlete</li>
+          <li>Accepting a follower - 5 points/athlete</li>
+        </ul>
+        <h5>Articles</h5>
+        <ul class="ponts-disk">
+          <li>Authoring/Creating an article - 100 points</li>
+          <li>Sharing your article with Facebook - 50 points</li>
+          <li>Sharing your article with Twitter - 50 points</li>
+          <li>Commenting on an article - 5 points (max of 10 points awarded/article)</li>
+          <li>Sharing an article that someone else wrote on Facebook or Twitter 5 points each (max 20 points/article)</li>
+          <li>Getting a “Like” or a “Favorite” on an article you wrote - 5 point/like</li>
+        </ul>
+        <h5>Chat</h5>
+        <ul class="ponts-disk">
+          <li>Authoring at Chat - 50 points</li>
+          <li>Sharing your chat with Facebook - 25 points</li>
+          <li>Sharing your chat with Twitter - 25 points</li>
+          <li>Commenting on a chat - 5 points/comment (max of 15 points awarded/chat)</li>
+          <li>Sharing a chat on Facebook or Twitter 5 points each (max 15 points/chat)</li>
+        </ul>
+      </div>
+      <div class="modal-footer center-btns"><a class="btn-link" data-dismiss="modal">Back</a></div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="visible-xs"> <a class="has-notif" href="notification.html"><i class="icon-notification"></i> <span>Notifications</span></a></li>
+          <li class="dropdown hidden-xs"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-tabs-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <div class="nodata-panel">
+                      <div class="nodata-body">
+                        <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link" href="notification.html">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile-about.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Settings</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a class="racereview"><span class="square"><i></i></span>
+                    <span class="label-text">Race Review</span>
+                    </a></li>
+                  <li><a class="trining"><span class="square"><i></i></span>
+                    <span class="label-text">Training</span>
+                    </a></li>
+                  <li><a class="obsreview"><span class="square"><i></i></span>
+                    <span class="label-text">Obstacle Review</span>
+                    </a></li>
+                  <li><a class="proreview"><span class="square"><i></i></span>
+                    <span class="label-text">Product Review</span>
+                    </a></li>
+                  <li><a class="inspiration"><span class="square"><i></i></span>
+                    <span class="label-text">Inspiration</span>
+                    </a></li>
+                  <li><a class="fuiling"><span class="square"><i></i></span>
+                    <span class="label-text">Fueling</span>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link" href="obstacle-library.html">View All</a></div>
+            </div>
+          </li>
+          <li><a data-toggle="globalSearch"><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+          	<li><a href="dashboard.html">POST ARTICLES</a></li>
+          	<li><a href="obstacle-chat.html">OBSTACLE CHAT</a></li>
+            <li><a class="scroll-link nextpage-scroll" data-rel="topOcrId">Top OCR Athletes</a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="global-search">
+      <div class="filter-action">
+        <div class="container">
+          <div class="dropdown no-overlay pull-left"> <a class="block" data-toggle="dropdown"><i class="icon-filter block"></i></a>
+            <div data-dropdown="onhold" class="dropdown-menu">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId2">
+                <label for="allId2">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId2">
+                <label for="articleId2">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId2">
+                <label for="chatId2">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId2">
+                <label for="videosId2">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId2">
+                <label for="photosId2">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span>
+          <div class="input-group">
+          	<a class="input-group-addon"><i class="icon-search"></i></a>
+            <input type="text" placeholder="Quick Search" value="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="search-autosuggest scrollbox">
+        <div class="container">
+          <div class="row">
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">ARTICLES</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/default-category.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">CHAT</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">MEDIA</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading font-med">MANIACS</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- #EndLibraryItem --><section class="main-section" data-height="fullheight">
+  <div class="static-banner"><img src="img/ambassador-banner.jpg" width="1600" height="400" alt=""/>
+    <div class="heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="title">Ambassador Program</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="static-page main-padd">
+    <div class="container">
+      <div class="row ambassador-page">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="static-tabs responsive-tabs" data-rel="panel">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#ambassadorTab1" data-toggle="tab">sponsored ATHLETES</a></li>
+              <li role="presentation"><a href="#ambassadorTab2" data-toggle="tab">associate program</a></li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="ambassadorTab1">
+                <p>ObstacleManiac is proud to have these Pro Racers represent us on the course and here at ObstacleManaic. We encourage you to follow our Pro’s, ask them questions, and get the benefit of their years of experience. For those that are interested in joining our Sponsored Racer Program Please fill out the form below and we’ll get back to you.</p>
+                <br>
+                <div class="row grid-list mar-top-20" data-role="carouselMobile">
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored1"><img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored2"> <img src="img/default-user.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored3"> <img src="img/maniac-thumb2.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored4"> <img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored5"><img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored6"> <img src="img/default-user.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored7"> <img src="img/maniac-thumb2.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="thumbnail thumbnail-default">
+                      <figure> <a class="scroll-link overlay" data-rel="sponsored8"> <img src="img/maniac-thumb.jpg" alt=""/>
+                        <figcaption>
+                          <h4>Jeff Shady</h4>
+                        </figcaption>
+                        </a> </figure>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-action heading mar-top-20">
+                  <aside class="col-sm-6 col-sm-push-6 text-right"><a class="btn btn-primary scroll-link" data-rel="requestForm">BECOME A SPONSORED ATHLETE</a></aside>
+                  <aside class="col-sm-6 col-sm-pull-6"><h5 class="green-text text-link">Sponsored Maniacs</h5></aside>
+                </div>
+                <div class="row row-padd" id="sponsored1">
+                  <aside class="col-sm-3 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/maniac-thumb.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 wow fadeInRight">
+                    <h4><a>Jeff Shady</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored2">
+                  <aside class="col-sm-3 col-sm-push-9 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/default-user.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 col-sm-pull-3 wow fadeInLeft">
+                    <h4><a>Iryani Kent</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored3">
+                  <aside class="col-sm-3 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/maniac-thumb2.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 wow fadeInRight">
+                    <h4><a>Jeff Shady</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored4">
+                  <aside class="col-sm-3 col-sm-push-9 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/maniac-thumb.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 col-sm-pull-3 wow fadeInLeft">
+                    <h4><a>Iryani Kent</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored5">
+                  <aside class="col-sm-3 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/maniac-thumb.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 wow fadeInRight">
+                    <h4><a>Jeff Shady</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored6">
+                  <aside class="col-sm-3 col-sm-push-9 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/default-user.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 col-sm-pull-3 wow fadeInLeft">
+                    <h4><a>Iryani Kent</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored7">
+                  <aside class="col-sm-3 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/maniac-thumb2.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 wow fadeInRight">
+                    <h4><a>Jeff Shady</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <div class="row row-padd" id="sponsored8">
+                  <aside class="col-sm-3 col-sm-push-9 wow fadeInUp">
+                    <div class="thumbnail thumbnail-default">
+                      <figure><a class="overlay"><img src="img/maniac-thumb.jpg" alt=""/></a></figure>
+                    </div>
+                  </aside>
+                  <article class="col-sm-9 col-sm-pull-3 wow fadeInLeft">
+                    <h4><a>Iryani Kent</a></h4>
+                    <p>Juliana Sproles is a Multiple Podium Master Class Elite athlete and a certified SGX trainer. She lives in Atlanta ands spends her time training other obstacle course racers at the Compound in Buford Georgia. Her expertise is well known in the OCR community where the best athletes seek out her coaching skills. <a class="btn-link">More</a></p>
+                  </article>
+                </div>
+                <h4 id="requestForm">Request to be listed as a sponsored racer</h4>
+                <form class="mar-top-30">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group" data-error="has-error">
+                        <div class="control-label">Name <span class="mandatory">*</span></div>
+                        <input type="text" class="form-control" placeholder="Enter your name">
+                        <div class="help-block"><span>Please enter valid name</span></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group" data-error="has-error">
+                        <div class="control-label">Email <span class="mandatory">*</span></div>
+                        <input type="text" class="form-control" placeholder="Enter your email id">
+                        <div class="help-block"><span>Please enter valid email</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group" data-error="has-error">
+                        <div class="control-label">Phone Number <span class="mandatory">*</span></div>
+                        <input type="text" class="form-control" placeholder="Enter your phone number">
+                        <div class="help-block"><span>Please enter valid phone number</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group" data-error="has-error">
+                    <div class="control-label">2015 Podium Appearances (Race/Date)</div>
+                    <textarea class="form-control" rows="3" cols=""></textarea>
+                  </div>
+                  <div class="form-group" data-error="has-error">
+                    <div class="control-label">What are your plans to race next year (races)?</div>
+                    <textarea class="form-control" rows="3" cols=""></textarea>
+                  </div>
+                  <div class="form-group" data-error="has-error">
+                    <div class="control-label">And most importantly, why do you want to be an ObstacleManiac sponsor? </div>
+                    <textarea class="form-control" rows="3" cols=""></textarea>
+                  </div>
+                  <div class="text-right">
+                    <button class="btn btn-primary">Apply</button>
+                  </div>
+                </form>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="ambassadorTab2">
+                <h4>Associates Program <small class="font-md">(Limited Availability)</small></h4>
+                <p>We're looking for people like us, that are just as crazy and passionate about Obstacle Course Racing as we are.   WIth that in mind we've create an Associate Program and joining makes you a full fledged Maniac.</p>
+                <p>Why Join?  ObstacleManiac freebies, events, and of course an ObstacleManaic Hat.  Once you join our program we'll send you one of our cool hats (beanie or baseball - your choice) and a sticker for your car.  Also, we'll keep you on our special mailing list for special events and pre- and post-race parties that OM will host during the year. This will give you the chance to meet our ObstacleManiac Pro's, other Maniac Associates and to enjoy an live, social environment with like minded athletes and, well...ObstacleManiacs like you.  It's all about the #OCRCommunity, right?  Joining is free for the first 50 that sign up so don't delay!</p>
+                <p>What Do We Ask Of You?  As an ObstacleManiac all we ask is that you encourage others to join OM, share their stories, their experiences, their successes and their failures.  The bigger the community the more we all benefit...and they too can join our Associate Program.  How much more fun would it be to join our special events than to bring along a friend?</p>
+                <form class="mar-top-30">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group" data-error="has-error">
+                        <div class="control-label">Name <span class="mandatory">*</span></div>
+                        <input type="text" class="form-control" placeholder="Enter your name">
+                        <div class="help-block"><span>Please enter valid name</span></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group" data-error="has-error">
+                        <div class="control-label">Email <span class="mandatory">*</span></div>
+                        <input type="text" class="form-control" placeholder="Enter your email id">
+                        <div class="help-block"><span>Please enter valid email</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group" data-error="has-error">
+                        <div class="control-label">Phone Number <span class="mandatory">*</span></div>
+                        <input type="text" class="form-control" placeholder="Enter your phone number">
+                        <div class="help-block"><span>Please enter valid phone number</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group" data-error="has-error">
+                    <div class="control-label">Mailing Address</div>
+                    <textarea class="form-control" rows="3" cols=""></textarea>
+                  </div>
+                  <div class="form-group" data-error="has-error">
+                    <div class="control-label">Races You Want to Cover in 2016</div>
+                    <textarea class="form-control" rows="3" cols=""></textarea>
+                  </div>
+                  <div class="form-group" data-error="has-error">
+                    <div class="control-label">Why You Want to Join</div>
+                    <textarea class="form-control" rows="3" cols=""></textarea>
+                  </div>
+                  <div class="text-right">
+                    <button class="btn btn-primary">Apply</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a href="about.html">About us</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="help-and-support.html">Help &amp; Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="advertise.html">Advertise with us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem --><script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+$(function () {
+   new WOW().init();
+   $(".responsive-tabs").responsiveTabs();
+});
+</script>
+</body>
+</html>

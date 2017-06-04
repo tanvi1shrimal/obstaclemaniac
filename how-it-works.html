@@ -1,0 +1,488 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body><!-- #BeginLibraryItem "/Library/header-after-login.lbi" -->
+<!--Popup Start-->
+<div id="maniacPointsModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h5 class="modal-title">MANIAC POINTS</h5>
+        <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a>
+      </div>
+      <div class="modal-body form-body">
+      	<span class="icon-position">16<sup>th</sup></span>
+        <span class="badge-orange"><img id="maniacBadge" class="svg" src="img/badge.svg" alt=""/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+      		<aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+        	<aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="earnPointsModal">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content modal-message">
+      <div class="modal-header">
+        <h5 class="modal-title">How do I Earn Points ?</h5>
+      </div>
+      <div class="modal-body">
+        <p>“Win points to get and keep your OCR Profile Card on the Home Page in the Top 10 Maniacs and to win monthly and annual prizes!  Every time you create new content for the OM community (e.g., publish and/or share an article, start a discussion or post pictures or videos), you get Maniac points.  The more points you gain, the more likely you are to win a prize.  Prizes are awarded monthly, so get started contributing content and sharing today!</p>
+        <p>Here’s a convenient list of the activities and points you earn by contributing to the OCR community on obstaclemaniac.com.”</p>
+        <h5>Profile Set Up</h5>
+        <ul class="ponts-disk">
+          <li>Complete Profile - 100 points (must include photo to get points)</li>
+          <li>Update your profile with a recent race - 10 points for each entry</li>
+          <li>Following an athlete - 5 points/athlete</li>
+          <li>Accepting a follower - 5 points/athlete</li>
+        </ul>
+        <h5>Articles</h5>
+        <ul class="ponts-disk">
+          <li>Authoring/Creating an article - 100 points</li>
+          <li>Sharing your article with Facebook - 50 points</li>
+          <li>Sharing your article with Twitter - 50 points</li>
+          <li>Commenting on an article - 5 points (max of 10 points awarded/article)</li>
+          <li>Sharing an article that someone else wrote on Facebook or Twitter 5 points each (max 20 points/article)</li>
+          <li>Getting a “Like” or a “Favorite” on an article you wrote - 5 point/like</li>
+        </ul>
+        <h5>Chat</h5>
+        <ul class="ponts-disk">
+          <li>Authoring at Chat - 50 points</li>
+          <li>Sharing your chat with Facebook - 25 points</li>
+          <li>Sharing your chat with Twitter - 25 points</li>
+          <li>Commenting on a chat - 5 points/comment (max of 15 points awarded/chat)</li>
+          <li>Sharing a chat on Facebook or Twitter 5 points each (max 15 points/chat)</li>
+        </ul>
+      </div>
+      <div class="modal-footer center-btns"><a class="btn-link" data-dismiss="modal">Back</a></div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="visible-xs"> <a class="has-notif" href="notification.html"><i class="icon-notification"></i> <span>Notifications</span></a></li>
+          <li class="dropdown hidden-xs"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-tabs-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <div class="nodata-panel">
+                      <div class="nodata-body">
+                        <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link" href="notification.html">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile-about.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Settings</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a class="racereview"><span class="square"><i></i></span>
+                    <span class="label-text">Race Review</span>
+                    </a></li>
+                  <li><a class="trining"><span class="square"><i></i></span>
+                    <span class="label-text">Training</span>
+                    </a></li>
+                  <li><a class="obsreview"><span class="square"><i></i></span>
+                    <span class="label-text">Obstacle Review</span>
+                    </a></li>
+                  <li><a class="proreview"><span class="square"><i></i></span>
+                    <span class="label-text">Product Review</span>
+                    </a></li>
+                  <li><a class="inspiration"><span class="square"><i></i></span>
+                    <span class="label-text">Inspiration</span>
+                    </a></li>
+                  <li><a class="fuiling"><span class="square"><i></i></span>
+                    <span class="label-text">Fueling</span>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link" href="obstacle-library.html">View All</a></div>
+            </div>
+          </li>
+          <li><a data-toggle="globalSearch"><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+          	<li><a href="dashboard.html">POST ARTICLES</a></li>
+          	<li><a href="obstacle-chat.html">OBSTACLE CHAT</a></li>
+            <li><a class="scroll-link nextpage-scroll" data-rel="topOcrId">Top OCR Athletes</a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="global-search">
+      <div class="filter-action">
+        <div class="container">
+          <div class="dropdown no-overlay pull-left"> <a class="block" data-toggle="dropdown"><i class="icon-filter block"></i></a>
+            <div data-dropdown="onhold" class="dropdown-menu">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId2">
+                <label for="allId2">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId2">
+                <label for="articleId2">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId2">
+                <label for="chatId2">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId2">
+                <label for="videosId2">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId2">
+                <label for="photosId2">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span>
+          <div class="input-group">
+          	<a class="input-group-addon"><i class="icon-search"></i></a>
+            <input type="text" placeholder="Quick Search" value="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="search-autosuggest scrollbox">
+        <div class="container">
+          <div class="row">
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">ARTICLES</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/default-category.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">CHAT</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">MEDIA</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading font-med">MANIACS</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- #EndLibraryItem --><section class="main-section" data-height="fullheight">
+  <div class="static-banner">
+  	<img src="img/howitwork-banner.jpg" width="1600" height="270" alt=""/>
+  	<div class="heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="title">how it works</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="carousel-caption">
+      <table class="carousel-container">
+        <tbody>
+          <tr>
+            <td class="text-center"><h2>how it works</h2>
+              <span class="font-lg">hendrerit in vulputate velit esse molestie consequat</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>-->
+  </div>
+  <section class="howitwork-page">
+    <div class="bgcolor-default">
+      <div class="container">
+        <div class="row-padd">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="heading">
+                <h5>How it Works</h5>
+              </div>
+              <p>We’re passionate about Obstacle Course Racing…all of us in this community called ObstacleManiac.</p>
+              <p>ObstacleManiac is a community-driven site where users (ObstacleManiacs) share their stories, experiences and wisdom with fellow OCR athletes. Being community driven means the website is driven by you, the member.  That means content on the Home Page is content members write and content members feel is the most important or valuable.  For those that want more, the ObstacleManiac platform provides a rich search engine giving you access to an encyclopedia of content for you use, read, and enjoy as you continue on your OCR journey   This will take you into the depths of our archives which, naturally will grow as we do.  As we go forward we’ll continue to deliver new, valuable features.  Our next release is already in development and is expected later this summer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bgcolor-primary">
+      <div class="container">
+        <div class="row row-padd">
+          <figure class="col-md-4 wow fadeInUp"><img src="img/howitwork-img1.png" width="376" height="260" class="img-rounded" alt=""/></figure>
+          <article class="col-md-8 wow fadeInRight">
+            <h5 class="title green-text">Earn Points and Badges and Win Prizes</h5>
+            <p>As you write articles, comment and contribute to the community, you earn points.  In fact the more you interact with the ObstacleManiac platform the more points you receive.  Log in daily, write or comment on an article, start or participate in a chat.  Each time you engage you earn points and badges.  The community automatically tracks your monthly, annual, and lifetime points. ObstacleManiac members receive prizes like free races or OCR accessories each month.  If you find yourself in the top 10 your profile is promoted to the Home Page for you and your friends to admire.  Prizes change each month so make sure you check back regularly.</p>
+            <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="bgcolor-default">
+      <div class="container">
+        <div class="row row-padd">
+          <figure class="col-md-4 col-md-push-8 wow fadeInUp"><img src="img/howitwork-img2.png" width="376" height="260" class="img-rounded" alt=""/></figure>
+          <article class="col-md-8 col-md-pull-4 wow fadeInLeft">
+            <h5 class="title green-text">Complete your OCR Athlete Profile.</h5>
+            <p>You get 200 points for signing up and another 300 points when you complete your profile.  In addition, the information in your profile can help the ObstacleManiac platform recommend other OCR Athletes  you may want to follow.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="bgcolor-primary">
+      <div class="container">
+        <div class="row row-padd">
+          <figure class="col-md-4 wow fadeInUp"><img src="img/howitwork-img3.png" width="376" height="260" class="img-rounded" alt=""/></figure>
+          <article class="col-md-8 wow fadeInRight">
+            <h5 class="title green-text">Read Articles and Chats about OCR Events, Products, Training and More</h5>
+            <p>You have an unquenchable thirst for information about OCR—Race Reviews, Gear Reviews and How to Train and Fuel.  Well, articles are the backbone of the ObstacleManiac platform and you are the author.  We provide the community and the platform, and you create the content and the community.  Read the most popular or recent articles and chat discussions or search for a particular topic you’re interested in.  Each time you engage is another opportunity to gain points and win prizes and badges.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="bgcolor-default">
+      <div class="container">
+        <div class="row row-padd">
+          <figure class="col-md-4 col-md-push-8 wow fadeInUp"><img src="img/howitwork-img4.png" width="376" height="260" class="img-rounded" alt=""/></figure>
+          <article class="col-md-8 col-md-pull-4 wow fadeInLeft">
+            <h5 class="title green-text">Write an Article or start a Chat Discussion</h5>
+            <p>Ever wanted to share your experience about a particular race, obstacle, shoe or training technique?  ObstacleManiac allows you to share all of these and more with a community that is passionate about OCR and hungry to see what you have to say!  Write an article now <a class="btn-link">here</a>.  Or maybe you just want to get a group together to attend an upcoming race. Start an Obstacle Chat session now <a class="btn-link">here</a>.  Your followers on ObstacleManiac will automatically be notified you’ve posted an article or a discussion, and you can also share them on Facebook and Twitter.  And you earn ObstacleManiac points for writing and sharing.  Sign up <a class="btn-link">here</a> and get started today!</p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="bgcolor-primary">
+      <div class="container">
+        <div class="row row-padd">
+          <figure class="col-md-4 wow fadeInUp"><img src="img/howitwork-img3.png" width="376" height="260" class="img-rounded" alt=""/></figure>
+          <article class="col-md-8 wow fadeInRight">
+            <h5 class="title green-text">Get to Know Fellow OCR Athletes</h5>
+            <p>Maybe you want to find athletes local to you so you can train with them.  Maybe you just want to feel that sense of community you feel every time you go to a race.  Start following your peers, or start chat discussions about races or local training events your peers plan to attend  It’s all about community and learning from one another.  Create your profile <a class="btn-link">here</a> to get started! </p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="bgcolor-default">
+      <div class="container">
+        <div class="row row-padd">
+          <figure class="col-md-4 col-md-push-8 wow fadeInUp"><img src="img/howitwork-img4.png" width="376" height="260" class="img-rounded" alt=""/></figure>
+          <article class="col-md-8 col-md-pull-4 wow fadeInLeft">
+            <h5 class="title green-text">Invite your Friends to join you on ObstacleManiac</h5>
+            <p>Bring your friends along too!  You can send personal messages to your friends based on email or social networking accounts.  Invite them to help you build and learn from the OCR Community on ObstacleManiac and yes, earn more ObstacleManiac points!  Create your profile <a class="btn-link">here</a> to get started!</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</section><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a href="about.html">About us</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="help-and-support.html">Help &amp; Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="advertise.html">Advertise with us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem --><script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+$(function () {
+   mainNav(5);
+   new WOW().init();
+});
+</script>
+</body>
+</html>

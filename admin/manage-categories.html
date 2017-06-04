@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Common Admin</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/normalize.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<div class="notifications success" id="successMsz">
+  <div class="content"> <span>SUCCESS!</span> This is a success message.
+    <div class="icon"></div>
+    <div class="close-notification"></div>
+  </div>
+</div>
+<div class="popup confirme-popup animated" id="confirmePopup">
+  <div class="popup-title">Confirmation <i class="icon-close" onClick="closePopDiv('confirmePopup', 'bounceOutUp');">&nbsp;</i></div>
+  <div class="popup-content">
+    <p>Are you sure you want to delete ?</p>
+    <div class="communicate-footer text-center">
+      <button class="button wht" onClick="closePopDiv('confirmePopup', 'bounceOutUp');">No</button>
+      <button class="button" onClick="closePopDiv('confirmePopup', 'bounceOutUp'); sucessMsz(); ">Yes</button>
+    </div>
+  </div>
+</div>
+<div id="AddModal" class="popup animated">
+  <div class="popup-title">ADD INTERNAL NEWSFEED <i onclick="closePopDiv('AddModal', 'bounceOutUp');" class="icon-close">&nbsp;</i></div>
+  <div class="popup-content">
+    <div class="communicate-footer row-flued">
+      <div class="from-subject">
+          <div class="form-control">   
+          	<label class="label">TITLE</label>
+            <div class="text-field">
+              <input type="text" value="Spartan Sprint in Los Angeles">
+            </div>
+            <div class="error-holder"><span>Error</span></div>
+          </div>  
+        <div class="form-control">
+          <label class="label">URL</label>
+          <div class="text-field">
+            <input type="email" value="http://www.obstaclemaniac/losange1?513">
+          </div>
+        </div>
+        <div class="form-control">
+          <label class="label">CATEGORY</label>
+          <div class="text-field">
+            <select>
+              <option>Upcoming Races</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+        <div class="form-control column-6">
+          <label class="label">From</label>
+          <div class="text-field calendarview">
+            <input type="text" value="" id="durationFrom"  placeholder="Start Date"/>
+            <i class="icon-calendar"></i>
+          </div>
+        </div>
+        <div class="form-control column-6">
+           <label class="label">To</label>
+           <div class="text-field calendarview">
+            <input type="text" value="" id="durationTo" placeholder="End Date" />
+            <i class="icon-calendar"></i>
+          </div>
+        </div>
+        </div>
+      </div>
+      <button onclick="closePopDiv('AddModal', 'bounceOutUp');" class="button">Add</button>
+      <a onclick="closePopDiv('AddModal', 'bounceOutUp');" class="gray-button float-right marl10">Cancel</a>
+    </div>
+  </div>
+</div>
+<section class="notification">Use Shift or Control key for multiple selection</section>
+<section class="page-wrpper">
+  <header>
+    <section class="header-wrapper">
+      <a href="users.html" class="logo-block"><img src="img/logo.png" alt=""></a>
+      <div class="header-right">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="users.html">USERS </a></li>
+            <li><a>ABUSE REPORT</a></li>
+            <li><a>TOP OCRs</a></li>
+            <li><a>CONTENT UPDATES</a></li>
+            <li class="dropdown"><a class="selected">NEWS FEED<i class="icon-arrow"></i></a>
+              <ul class="wd190">
+                <li class="selected"><a href="internal-newsfeed.html">Internal &amp; External Feed</a></li>
+                <li><a href="external-newsfeed.html">External Feed</a></li>
+              </ul>
+            </li>
+            <li><a>MONTHLY COMPETITIONS</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+          <ul class="right-control">
+            <li> <a class="user-setting"><i class="icon-setting"></i></a>
+             <ul class="action-dropdown userSettingdropdown">
+                <li><a href="change-password.html">Change password</a></li>
+                <li><a href="login.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </header>
+  <!--/Header End-->
+  <aside class="content-wrapper"> 
+    <!--Info row-->
+    <div class="info-row row-flued">
+      <h2>MANAGE EXTENDED NEWSFEED</h2>
+      <div class="info-row-right">
+        <a class="btn-link" data-tooltip="title" data-html="tooltip"><span><i class="icon-info">&nbsp;</i></span></a>
+        <div class="tooltipHtml">
+            Check the pages on which extended feeds needs to be displayed<br>
+			Similar = Same Category<br>
+			Popular = Most Like / Comments
+        </div>
+      </div>
+    </div>
+    <!--/Info row-->
+    <div class="form-panel">
+      <div class="row">
+    	<aside class="column-6">
+        	<ul class="form-separate">
+            	<li>
+                  <div class="form-control" data-enable="disable">
+                    <div class="ck-cbox"><input type="checkbox" id="articleDtls"> <label class="label" for="articleDtls">Article Detail</label></div>
+                    <div class="text-field auto-large">
+                      <select data-placeholder="Similar Article" class="chosen-select" multiple>
+                        <option value=""></option>
+                        <option value="Similar Article1">Similar Article1</option>
+                        <option value="Similar Article2">Similar Article2</option>
+                        <option value="Similar Article3">Similar Article3</option>
+                        <option value="Similar Article4">Similar Article4</option>
+                        <option value="Similar Article4">Similar Article5</option>
+                      </select>
+                    </div>
+                    <div class="error-holder"><span>Error</span></div>
+                    <div class="ck-cbox">
+                        <input type="radio" id="mixedRd" name="feed" checked> <label class="label" for="mixedRd">Mixed Feed</label>
+                        <input type="radio" id="tabbedRd" name="feed"> <label class="label" for="tabbedRd">Tabbed Feed</label>
+                    </div>
+                  </div>
+               </li>
+               <li>
+                  <div class="form-control" data-enable="disable">   
+                    <div class="ck-cbox"><input type="checkbox" id="mdDtls" checked> <label class="label" for="mdDtls">Media Detail</label></div>
+                    <div class="text-field auto-large">
+                      <select data-placeholder="Popular Media" class="chosen-select" multiple>
+                        <option value=""></option>
+                        <option value="Popular Media1">Popular Media1</option>
+                        <option value="Popular Media2">Popular Media2</option>
+                        <option value="Popular Media3">Popular Media3</option>
+                        <option value="Popular Media4">Popular Media4</option>
+                        <option value="Popular Media5">Popular Media5</option>
+                      </select>
+                    </div>
+                    <div class="error-holder"><span>Error</span></div>
+                    <div class="ck-cbox">
+                        <input type="radio" id="mixedRd2" name="mdfeed"> <label class="label" for="mixedRd2">Mixed Feed</label>
+                        <input type="radio" id="tabbedRd2" name="mdfeed" checked> <label class="label" for="tabbedRd2">Tabbed Feed</label>
+                    </div>
+                  </div>
+               </li>
+               <li>
+                  <div class="form-control" data-enable="disable">   
+                    <div class="ck-cbox"><input type="checkbox" id="comDtls"> <label class="label" for="comDtls">Monthly Competition</label></div>
+                    <div class="text-field auto-large">
+                      <select data-placeholder="Famous Athlete" class="chosen-select" multiple>
+                        <option value=""></option>
+                        <option value="Famous Athlete1">Famous Athlete1</option>
+                        <option value="Famous Athlete2">Famous Athlete2</option>
+                        <option value="Famous Athlete3">Famous Athlete3</option>
+                        <option value="Famous Athlete4">Famous Athlete4</option>
+                        <option value="Famous Athlete5">Famous Athlete5</option>
+                      </select>
+                    </div>
+                    <div class="error-holder"><span>Error</span></div>
+                    <div class="ck-cbox">
+                        <input type="radio" id="mixedRd3" name="comfeed"> <label class="label" for="mixedRd3">Mixed Feed</label>
+                        <input type="radio" id="tabbedRd3" name="comfeed" checked> <label class="label" for="tabbedRd3">Tabbed Feed</label>
+                    </div>
+                  </div>
+               </li>
+            </ul>
+        </aside>
+        <aside class="column-6">
+        	<ul class="form-separate">
+            	<li>
+                  <div class="form-control" data-enable="disable">   
+                    <div class="ck-cbox"><input type="checkbox" id="articleDtls_2" checked> <label class="label" for="articleDtls_2">Chat Detail</label></div>
+                    <div class="text-field auto-large">
+                      <select data-placeholder="Similar Article" class="chosen-select" multiple>
+                        <option value="Similar Article1">Similar Article1</option>
+                        <option value="Similar Article2">Similar Article2</option>
+                        <option value="Similar Article3">Similar Article3</option>
+                        <option value="Similar Article4">Similar Article4</option>
+                        <option value="Similar Article4">Similar Article5</option>
+                      </select>
+                    </div>
+                    <div class="error-holder"><span>Error</span></div>
+                    <div class="ck-cbox">
+                        <input type="radio" id="mixedRd_2" name="feed_2"> <label class="label" for="mixedRd_2">Mixed Feed</label>
+                        <input type="radio" id="tabbedRd_2" name="feed_2" checked> <label class="label" for="tabbedRd_2">Tabbed Feed</label>
+                    </div>
+                  </div>
+               </li>
+               <li>
+                  <div class="form-control" data-enable="disable">   
+                    <div class="ck-cbox"><input type="checkbox" id="mdDtls_2"> <label class="label" for="mdDtls_2">Profile</label></div>
+                    <div class="text-field auto-large">
+                      <select data-placeholder="Popular Media" class="chosen-select" multiple>
+                        <option value=""></option>
+                        <option value="Popular Media1">Popular Media1</option>
+                        <option value="Popular Media2">Popular Media2</option>
+                        <option value="Popular Media3">Popular Media3</option>
+                        <option value="Popular Media4">Popular Media4</option>
+                        <option value="Popular Media5">Popular Media5</option>
+                      </select>
+                    </div>
+                    <div class="error-holder"><span>Error</span></div>
+                    <div class="ck-cbox">
+                        <input type="radio" id="mixedRd2_2" name="mdfeed_2" checked> <label class="label" for="mixedRd2_2">Mixed Feed</label>
+                        <input type="radio" id="tabbedRd2_2" name="mdfeed_2"> <label class="label" for="tabbedRd2_2">Tabbed Feed</label>
+                    </div>
+                  </div>
+               </li>
+               <li>
+                  <div class="form-control" data-enable="disable">   
+                    <div class="ck-cbox"><input type="checkbox" id="comDtls_2"> <label class="label" for="comDtls_2">Dashboard</label></div>
+                    <div class="text-field auto-large">
+                      <select data-placeholder="Famous Athlete" class="chosen-select" multiple>
+                        <option value=""></option>
+                        <option value="Famous Athlete1">Famous Athlete1</option>
+                        <option value="Famous Athlete2">Famous Athlete2</option>
+                        <option value="Famous Athlete3">Famous Athlete3</option>
+                        <option value="Famous Athlete4">Famous Athlete4</option>
+                        <option value="Famous Athlete5">Famous Athlete5</option>
+                      </select>
+                    </div>
+                    <div class="error-holder"><span>Error</span></div>
+                    <div class="ck-cbox">
+                        <input type="radio" id="mixedRd3_2" name="comfeed_2" checked> <label class="label" for="mixedRd3_2">Mixed Feed</label>
+                        <input type="radio" id="tabbedRd3_2" name="comfeed_2"> <label class="label" for="tabbedRd3_2">Tabbed Feed</label>
+                    </div>
+                  </div>
+               </li>
+            </ul>
+        </aside>
+      </div>
+    </div>
+    <div class="clearfix matop20"><button class="button float-right">UPDATE</button></div>
+  </aside>
+  <div class="pushfooter"></div>
+</section>
+<section class="footer-wrapper">
+  <footer>
+    <ul class="footer-links">
+      <li><a>Sitemap</a></li>
+    </ul>
+    <div class="powered-by">
+      <label>POWERED BY </label>
+      <a class="icon-vinfotech-logo">&nbsp;</a> </div>
+  </footer>
+</section>
+<script src="js/vendor/jquery-1.10.1.min.js"></script> 
+<script src="js/vendor/jquery-ui.min.js"></script> 
+<script src="js/plugins.js"></script>
+<script src="js/chosen.jquery.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+function sucessMsz(){
+  $('.notifications').addClass('active');
+  setTimeout(function(){
+	  $('.notifications').removeClass('active');
+  },3000);
+}	
+
+$(function(){
+ $('#durationFrom').datepicker();
+  $('#durationTo').datepicker();
+  $('#ui-datepicker-div, .calendarview').mouseup(function (e) {
+	  return false;
+  });
+
+  var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+	
+	$('[data-enable="disable"]').each(function() {
+        if(!$(this).find('input[type="checkbox"]').is(':checked')){
+			$(this).find('.chosen-select').prop('disabled', true).trigger("chosen:updated");
+			$(this).find('input[type="radio"]').prop('disabled', true);
+		} else {
+			$(this).find('.chosen-select').prop('disabled', false).trigger("chosen:updated");
+			$(this).find('input[type="radio"]').prop('disabled', false);
+		}
+    });
+	$('[data-enable="disable"] input[type="checkbox"]').on('click', function(){
+		if(!$(this).is(':checked')){
+			$(this).closest('[data-enable="disable"]').find('.chosen-select').prop('disabled', true).trigger("chosen:updated");
+			$(this).closest('[data-enable="disable"]').find('input[type="radio"]').prop('disabled', true);
+		} else {
+			$(this).closest('[data-enable="disable"]').find('.chosen-select').prop('disabled', false).trigger("chosen:updated");
+			$(this).closest('[data-enable="disable"]').find('input[type="radio"]').prop('disabled', false);
+		}
+	});
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1264 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body data-ng-app="ObstacleManiac"><!-- #BeginLibraryItem "/Library/header-after-login.lbi" -->
+<!--Popup Start-->
+<div id="maniacPointsModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h5 class="modal-title">MANIAC POINTS</h5>
+        <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a>
+      </div>
+      <div class="modal-body form-body">
+      	<span class="icon-position">16<sup>th</sup></span>
+        <span class="badge-orange"><img id="maniacBadge" class="svg" src="img/badge.svg" alt=""/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+      		<aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+        	<aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="earnPointsModal">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content modal-message">
+      <div class="modal-header">
+        <h5 class="modal-title">How do I Earn Points ?</h5>
+      </div>
+      <div class="modal-body">
+        <p>“Win points to get and keep your OCR Profile Card on the Home Page in the Top 10 Maniacs and to win monthly and annual prizes!  Every time you create new content for the OM community (e.g., publish and/or share an article, start a discussion or post pictures or videos), you get Maniac points.  The more points you gain, the more likely you are to win a prize.  Prizes are awarded monthly, so get started contributing content and sharing today!</p>
+        <p>Here’s a convenient list of the activities and points you earn by contributing to the OCR community on obstaclemaniac.com.”</p>
+        <h5>Profile Set Up</h5>
+        <ul class="ponts-disk">
+          <li>Complete Profile - 100 points (must include photo to get points)</li>
+          <li>Update your profile with a recent race - 10 points for each entry</li>
+          <li>Following an athlete - 5 points/athlete</li>
+          <li>Accepting a follower - 5 points/athlete</li>
+        </ul>
+        <h5>Articles</h5>
+        <ul class="ponts-disk">
+          <li>Authoring/Creating an article - 100 points</li>
+          <li>Sharing your article with Facebook - 50 points</li>
+          <li>Sharing your article with Twitter - 50 points</li>
+          <li>Commenting on an article - 5 points (max of 10 points awarded/article)</li>
+          <li>Sharing an article that someone else wrote on Facebook or Twitter 5 points each (max 20 points/article)</li>
+          <li>Getting a “Like” or a “Favorite” on an article you wrote - 5 point/like</li>
+        </ul>
+        <h5>Chat</h5>
+        <ul class="ponts-disk">
+          <li>Authoring at Chat - 50 points</li>
+          <li>Sharing your chat with Facebook - 25 points</li>
+          <li>Sharing your chat with Twitter - 25 points</li>
+          <li>Commenting on a chat - 5 points/comment (max of 15 points awarded/chat)</li>
+          <li>Sharing a chat on Facebook or Twitter 5 points each (max 15 points/chat)</li>
+        </ul>
+      </div>
+      <div class="modal-footer center-btns"><a class="btn-link" data-dismiss="modal">Back</a></div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="visible-xs"> <a class="has-notif" href="notification.html"><i class="icon-notification"></i> <span>Notifications</span></a></li>
+          <li class="dropdown hidden-xs"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-tabs-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <div class="nodata-panel">
+                      <div class="nodata-body">
+                        <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link" href="notification.html">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile-about.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Settings</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a class="racereview"><span class="square"><i></i></span>
+                    <span class="label-text">Race Review</span>
+                    </a></li>
+                  <li><a class="trining"><span class="square"><i></i></span>
+                    <span class="label-text">Training</span>
+                    </a></li>
+                  <li><a class="obsreview"><span class="square"><i></i></span>
+                    <span class="label-text">Obstacle Review</span>
+                    </a></li>
+                  <li><a class="proreview"><span class="square"><i></i></span>
+                    <span class="label-text">Product Review</span>
+                    </a></li>
+                  <li><a class="inspiration"><span class="square"><i></i></span>
+                    <span class="label-text">Inspiration</span>
+                    </a></li>
+                  <li><a class="fuiling"><span class="square"><i></i></span>
+                    <span class="label-text">Fueling</span>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link" href="obstacle-library.html">View All</a></div>
+            </div>
+          </li>
+          <li><a data-toggle="globalSearch"><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+          	<li><a href="dashboard.html">POST ARTICLES</a></li>
+          	<li><a href="obstacle-chat.html">OBSTACLE CHAT</a></li>
+            <li><a class="scroll-link nextpage-scroll" data-rel="topOcrId">Top OCR Athletes</a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="global-search">
+      <div class="filter-action">
+        <div class="container">
+          <div class="dropdown no-overlay pull-left"> <a class="block" data-toggle="dropdown"><i class="icon-filter block"></i></a>
+            <div data-dropdown="onhold" class="dropdown-menu">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId2">
+                <label for="allId2">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId2">
+                <label for="articleId2">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId2">
+                <label for="chatId2">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId2">
+                <label for="videosId2">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId2">
+                <label for="photosId2">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span>
+          <div class="input-group">
+          	<a class="input-group-addon"><i class="icon-search"></i></a>
+            <input type="text" placeholder="Quick Search" value="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="search-autosuggest scrollbox">
+        <div class="container">
+          <div class="row">
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">ARTICLES</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/default-category.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">CHAT</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">MEDIA</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading font-med">MANIACS</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- #EndLibraryItem --><section class="main-section bgcolor-primary" data-height="fullheight">
+  <div class="main-padd">
+    <div class="container">
+      <div class="heading">
+        <h5>SETTINGS</h5>
+      </div>
+      <div class="responsive-tabs" data-role="tabpanel" data-ng-controller="ChosenSelectCtrl as main">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#settingProfileTab" data-toggle="tab"><i class="icon-profile"></i> PROFILE</a></li>
+          <li><a href="#settingNotificationTab" data-toggle="tab"><i class="icon-notification2"></i> NOTIFICATION</a></li>
+          <li><a href="#settingSecurityTab" data-toggle="tab"><i class="icon-security"></i> SECURITY</a></li>
+          <li><a href="#settingPrivacyTab" data-toggle="tab"><i class="icon-privacy"></i> PRIVACY</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content panel panel-primary">
+          <div class="tab-pane fade in active" id="settingProfileTab">
+            <div class="panel-body" data-ng-init="viewEditMode=false">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1" data-ng-hide="viewEditMode">
+                  <div class="sub-heading">
+                    <h4 class="font-md mar-top-10">Basic</h4>
+                  </div>
+                  <ul class="form-panel mar-top-20">
+                  	<li class="media profile-media">
+                        <aside class="media-left">
+                            <figure class="profile-pic">
+                              <div class="dropdown no-overlay no-overlap">
+                                <a class="edit-btn dropdown-toggle" data-toggle="dropdown"><i class="icon-edit"></i></a>
+                                <ul class="dropdown-menu">
+                                  <li><a><i class="icon-upload-sm"></i><span>Upload New</span></a></li>
+                                  <li><a><i class="icon-remove-circle"></i><span>Remove</span></a></li>
+                                </ul>
+                              </div>
+                              <img src="img/user-pic.jpg" class="img-thumbnail" alt=""/>
+                            </figure>
+                        </aside>
+                        <div class="media-body media-middle">
+                          <h5 class="media-heading font-md">GET YOUR OCR FACE ON!</h5>
+                          Your fellow OCR Athletes here at ObstacleManiac will be more likely to Follow you!
+                        </div>
+          			</li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">FIRST NAME <span class="mandatory">*</span></div>
+                          <input type="text" placeholder="Enter your first name" value="Jeff" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">LAST NAME <span class="mandatory">*</span></div>
+                          <input type="text" placeholder="Enter your last name" value="Shady" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">GENDER <span class="mandatory">*</span></div>
+                          <div class="radio-inline control-radio"> <span class="radio">
+                            <input type="radio" name="gender" id="maleId" checked>
+                            <label for="maleId">Male</label>
+                            </span> <span class="radio">
+                            <input type="radio" name="gender" id="femaleId">
+                            <label for="femaleId">Female</label>
+                            </span> </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4 form-group">
+                        <div class="control-label">BIRTHDAY <span class="mandatory">*</span></div>
+                        <div class="input-group">
+                          <input type="text" class="form-control" value="" placeholder="Date of birth">
+                          <div class="input-group-addon"><i class="icon-calendar"></i></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                          <div class="control-label">EMAIL <span class="mandatory">*</span> <small>Your login id will remain same even if you change this</small></div>
+                          <input type="text" placeholder="Enter your email" value="jeffshady@obstaclemaniac.com" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">COUNTRY <span class="mandatory">*</span></div>
+                          <div class="form-group">
+                            <select class="form-control" data-chosen>
+                              <option>United States</option>
+                              <option>United States</option>
+                              <option>United States</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">STATE</div>
+                          <div class="form-group">
+                            <select data-placeholder="Select States" class="form-control" data-ng-change="main.actionUpdate()" data-chosen="main.allStates" data-ng-model="main.states" data-ng-options="state.name + ' (' + state.abbreviation + ')' for state in main.allStates">
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">CITY</div>
+                          <input type="text" placeholder="" value="New York" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group"> <span class="pull-right help-block">500</span>
+                        <div class="control-label">BIOGRAPHY <span class="mandatory">*</span></div>
+                        <textarea class="form-control" rows="5"></textarea>
+                      </div>
+                    </li>
+                    <li class="mar-top-20">
+                      <div class="control-label">FAVOURITE BRAND FOR RUNNING SHOES</div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <select class="form-control" data-chosen>
+                              <option selected>Choose the brand</option>
+                              <option>United States</option>
+                              <option>United States</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <input type="text" placeholder="Other Brand Name" value="" class="form-control">
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <input type="text" placeholder="Model" value="" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="control-label">FAVOURITE BRAND FOR CLOTHING</div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <select class="form-control" data-chosen>
+                              <option selected>Choose the brand</option>
+                              <option>United States</option>
+                              <option>United States</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <input type="text" placeholder="Other Brand Name" value="" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">ATHELETE LEVEL <span class="mandatory">*</span></div>
+                          <select class="form-control" data-chosen>
+                            <option selected>List of selection predefined</option>
+                            <option>United States</option>
+                            <option>United States</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">ANNUAL INCOME <small>Choose suitable range</small></div>
+                          <select class="form-control" data-chosen>
+                            <option selected>List of selection range</option>
+                            <option>United States</option>
+                            <option>United States</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="control-label">OCCUPATION</div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <select class="form-control" data-chosen>
+                              <option>Choose the occupation</option>
+                              <option>United States</option>
+                              <option>United States</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <input type="text" placeholder="Type here to choose other" value="" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="control-label">SPONSORHIPS</div>
+                      <div class="well">
+                        <div class="control-label">Company Name <small>You can add muliple name</small></div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <select class="form-control" data-chosen>
+                                <option>Please Select</option>
+                                <option>United States</option>
+                                <option>United States</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <input type="text" placeholder="Type Other" value="" class="form-control">
+                            </div>
+                          </div>
+                          <div class="col-sm-2">
+                            <div class="form-group"><a class="btn btn-info btn-block">Add</a></div>
+                          </div>
+                        </div>
+                        <ul class="tags-pill clearfix">
+                          <li>
+                            <div class="tags"><a class="icon-remove"></a><span>Reebok</span></div>
+                          </li>
+                          <li>
+                            <div class="tags"><a class="icon-remove"></a><span>Addidas</span></div>
+                          </li>
+                          <li>
+                            <div class="tags"><a class="icon-remove"></a><span>Nike</span></div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="control-label">FAVOURITE RACING COMPANY</div>
+                        <div class="form-group">
+                          <select class="form-control" data-chosen>
+                            <option>Choose the brand</option>
+                            <option>United States</option>
+                            <option>United States</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="control-label">RACES <small>You can add muliple</small></div>
+                      <div class="well">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <div class="control-label">Organizer</div>
+                              <select class="form-control" data-chosen>
+                                <option>Please Select</option>
+                                <option>United States</option>
+                                <option>United States</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <div class="control-label">Race</div>
+                              <input type="text" placeholder="Race" value="" class="form-control">
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <div class="control-label">Distance</div>
+                              <div class="input-group" data-dropdown="selectText">
+                                <input type="text" class="form-control" placeholder="###">
+                                <div class="input-group-btn">
+                                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="text">MI</span> <span class="caret"></span></button>
+                                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <li><a>MI</a></li>
+                                    <li class="select"><a>KM</a></li>
+                                    <li><a>MM</a></li>
+                                    <li><a>LM</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <div class="col-sm-8">
+                                <div class="form-group">
+                                  <div class="control-label">Location</div>
+                                  <input type="text" placeholder="Location" value="" class="form-control">
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="form-group">
+                                  <div class="control-label">Date</div>
+                                  <div class="input-group">
+                                    <input type="text" placeholder="date" value="" class="form-control">
+                                    <div class="input-group-addon"><i class="icon-calendar"></i></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="control-label">Position</div>
+                            <div class="row">
+                              <div class="col-sm-9">
+                                <div class="form-group-justified form-group form-justified-xs"> <span class="input-group">
+                                  <input type="text" placeholder="For age group" value="" class="form-control">
+                                  </span> <span class="input-group">
+                                  <input type="text" placeholder="For Gender" value="" class="form-control">
+                                  </span> <span class="input-group">
+                                  <input type="text" placeholder="Overall" value="" class="form-control">
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="form-group"><a class="btn btn-info btn-block">Add</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-responsive-custom mar-top-10 race-table">
+                          <table class="table table-condensed">
+                            <thead class="hidden-xs">
+                              <tr>
+                                <th>Organizer - Race</th>
+                                <th>Date</th>
+                                <th>Distance</th>
+                                <th>Location</th>
+                                <th class="inner-table"> <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3"><strong><strong>Position</strong></strong></td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                  </table></th>
+                                <th>&nbsp;</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Spartan - Military Sprint</td>
+                                <td>Feb 20,2015</td>
+                                <td>200 M</td>
+                                <td>California, US</td>
+                                <td class="inner-table"><table class="table">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3"><strong>Position</strong></td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                                <td class="action-td"><a class="delete"><i class="icon-remove"></i></a></td>
+                              </tr>
+                              <tr>
+                                <td>Spartan - Military Sprint</td>
+                                <td>Feb 20,2015</td>
+                                <td>200 M</td>
+                                <td>California, US</td>
+                                <td class="inner-table"><table class="table">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3"><strong>Position</strong></td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                                <td class="action-td"><a class="delete"><i class="icon-remove"></i></a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="right-btns"> <a class="font-med">Cancel</a> <a class="btn btn-primary" data-ng-click="viewEditMode=true">SAVE</a> </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1" data-ng-show="viewEditMode">
+                  <div class="sub-heading clearfix"> <span class="pull-right"><a data-ng-click="viewEditMode=false" class="edit-btn"><i class="icon-edit"></i></a></span>
+                    <h4 class="font-md mar-top-10">Basic</h4>
+                  </div>
+                  <ul class="form-panel mar-top-20">
+                  	<li class="media profile-media">
+                        <aside class="media-left">
+                            <figure class="profile-pic"><img src="img/user-pic.jpg" class="img-thumbnail" alt=""/></figure>
+                        </aside>
+                        <div class="media-body media-middle">
+                          <h5 class="media-heading font-md">GET YOUR OCR FACE ON!</h5>
+                          Your fellow OCR Athletes here at ObstacleManiac will be more likely to Follow you!
+                        </div>
+          			</li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">FIRST NAME</div>
+                          <span class="control-value">Jeff</span> </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">LAST NAME</div>
+                          <span class="control-value">Shady</span> </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">GENDER</div>
+                          <span class="control-value">Male</span> </div>
+                      </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="control-label">BIRTHDAY</div>
+                        <span class="control-value">01-08-1989</span> </div>
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                          <div class="control-label">EMAIL</div>
+                          <span class="control-value">jeffshady@obstaclemaniac.com</span> </div>
+                      </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">COUNTRY</div>
+                          <span class="control-value">United States</span> </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">STATE</div>
+                          <div class="form-group"> <span class="control-value">US State</span> </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">CITY</div>
+                          <span class="control-value">New York</span> </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <div class="control-label">BIOGRAPHY</div>
+                        <div class="control-value">
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <div class="control-label">FAVOURITE BRAND FOR RUNNING SHOES</div>
+                        <span class="control-value">Nike - Ultra Comfort</span> </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <div class="control-label">FAVOURITE BRAND FOR CLOTHING</div>
+                        <span class="control-value">Running shoes brands</span> </div>
+                    </li>
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">ATHELETE LEVEL</div>
+                          <span class="control-value">OCR Athelete</span> </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">ANNUAL INCOME</div>
+                          <span class="control-value">20,000 Dolllar</span> </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <div class="control-label">OCCUPATION</div>
+                        <span class="control-value">Racer</span> </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <div class="control-label">SPONSORHIPS</div>
+                        <div class="control-value">
+                          <ul class="tags-pill clearfix">
+                            <li>
+                              <div class="tags"><span>Reebok</span></div>
+                            </li>
+                            <li>
+                              <div class="tags"><span>Addidas</span></div>
+                            </li>
+                            <li>
+                              <div class="tags"><span>Nike</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <div class="control-label">FAVOURITE RACING COMPANY</div>
+                        <span class="control-value">Spartan</span> </div>
+                    </li>
+                    <li>
+                      <h4 class="font-md">RACES</h4>
+                      <div class="control-value">
+                        <div class="table-responsive-custom race-table">
+                          <table class="table table-condensed table-striped">
+                            <thead>
+                              <tr>
+                                <th colspan="3">2015</th>
+                                <th class="inner-table hidden-xs"> <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                  </table></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                                <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                                  <span class="light-gray font-sm">California, US</span></td>
+                                <td>May 10, 2015</td>
+                                <td class="inner-table"><table class="table font-md font-light">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                              <tr>
+                                <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                                <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                                  <span class="light-gray font-sm">California, US</span></td>
+                                <td>May 10, 2015</td>
+                                <td class="inner-table"><table class="table font-md font-light">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                              <tr>
+                                <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                                <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                                  <span class="light-gray font-sm">California, US</span></td>
+                                <td>May 10, 2015</td>
+                                <td class="inner-table"><table class="table font-md font-light">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table class="table table-condensed table-striped">
+                            <thead>
+                              <tr>
+                                <th colspan="3">2014</th>
+                                <th class="inner-table hidden-xs"> <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                  </table></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                                <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                                  <span class="light-gray font-sm">California, US</span></td>
+                                <td>May 10, 2015</td>
+                                <td class="inner-table"><table class="table font-md font-light">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                              <tr>
+                                <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                                <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                                  <span class="light-gray font-sm">California, US</span></td>
+                                <td>May 10, 2015</td>
+                                <td class="inner-table"><table class="table font-md font-light">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                              <tr>
+                                <td class="td-sm"><span class="badge">200 <small>M</small></span></td>
+                                <td><h5 class="table-heading">Colorado Military Spartan Sprint</h5>
+                                  <span class="light-gray font-sm">California, US</span></td>
+                                <td>May 10, 2015</td>
+                                <td class="inner-table"><table class="table font-md font-light">
+                                    <thead>
+                                      <tr>
+                                        <td colspan="3">Position</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Age Group</th>
+                                        <th>Gender</th>
+                                        <th>Overall</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>16</td>
+                                        <td>769</td>
+                                        <td>1,019</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <span></span> </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="settingNotificationTab">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="table-responsive-custom">
+                    <table class="table table-striped table-form mar-0">
+                      <thead>
+                        <tr>
+                          <th colspan="2"> <div class="sub-heading mar-0" data-ng-init="false">
+                              <div class="font-md mar-right-20 pull-left">Notify Me</div>
+                              <div class="radio-inline overflow"> <span class="radio">
+                                <input type="radio" data-ng-checked="true" data-ng-model="notifySwitch" id="yesId" data-ng-value="false" name="notify">
+                                <label for="yesId">Yes</label>
+                                </span> <span class="radio">
+                                <input type="radio" id="noId" data-ng-model="notifySwitch" data-ng-value="true" name="notify">
+                                <label for="noId">No</label>
+                                </span> </div>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>Check All</strong></td>
+                          <td><span class="checkbox">
+                            <input type="checkbox" class="checkall" data-ng-model="selectedAll" data-ng-disabled="notifySwitch" id="checkAll">
+                            <label for="checkAll">&nbsp;</label>
+                            </span></td>
+                        </tr>
+                        <tr>
+                          <td>When someone follows me</td>
+                          <td><span class="checkbox">
+                            <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId1">
+                            <label for="checkId1">&nbsp;</label>
+                            </span></td>
+                        </tr>
+                        <tr>
+                          <td>When someone likes my article</td>
+                          <td><span class="checkbox">
+                            <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId2">
+                            <label for="checkId2">&nbsp;</label>
+                            </span></td>
+                        </tr>
+                        <tr>
+                          <td>When someone comments on my</td>
+                          <td><div class="row">
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId3">
+                                <label for="checkId3">Article</label>
+                                </span></div>
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" id="checkId4">
+                                <label for="checkId4">Chat</label>
+                                </span></div>
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId5">
+                                <label for="checkId5">Media</label>
+                                </span></div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                          <td>When my connections post a new</td>
+                          <td><div class="row">
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" id="checkId6">
+                                <label for="checkId6">Article</label>
+                                </span></div>
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId7">
+                                <label for="checkId7">Chat</label>
+                                </span></div>
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" id="checkId8">
+                                <label for="checkId8">Media</label>
+                                </span></div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                          <td>When someone mentions me in</td>
+                          <td><div class="row">
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId9">
+                                <label for="checkId9">Article</label>
+                                </span></div>
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId10">
+                                <label for="checkId10">Chat</label>
+                                </span></div>
+                              <div class="col-xs-4"><span class="checkbox">
+                                <input type="checkbox" class="checkinput" data-ng-disabled="notifySwitch" checked id="checkId11">
+                                <label for="checkId11">Media</label>
+                                </span></div>
+                            </div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="settingSecurityTab">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="sub-heading">
+                    <h4 class="font-md mar-top-10">Change Password</h4>
+                  </div>
+                  <ul class="form-panel mar-top-20">
+                    <li class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">CURRENT</div>
+                          <input type="password" class="form-control" value="" placeholder="Enter your current password">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">NEW</div>
+                          <input type="password" class="form-control" value="" placeholder="Enter your new password">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <div class="control-label">RETYPE NEW</div>
+                          <input type="password" class="form-control" value="" placeholder="Retype new password">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="right-btns"> <a class="font-med">Cancel</a> <button type="submit" class="btn btn-primary loader-btn">CHANGE <span class="btn-loader"><span class="spinner-btn">&nbsp;</span></span> </button> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="settingPrivacyTab">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="sub-heading">
+                    <h4 class="font-md mar-top-10">Privacy</h4>
+                  </div>
+                  <p>Coming Soon...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a href="about.html">About us</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="help-and-support.html">Help &amp; Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="advertise.html">Advertise with us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem --><script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/angular.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/chosen-min.js"></script> 
+<script src="js/main.js"></script> 
+<script src="js/Controllers.js"></script> 
+<script>
+$(document).ready(function() {
+  $(".responsive-tabs").responsiveTabs();
+  handleCheckAll();
+});
+</script>
+</body>
+</html>

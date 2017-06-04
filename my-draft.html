@@ -1,0 +1,668 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body data-ng-app="ObstacleManiac">
+<!-- #BeginLibraryItem "/Library/header-after-login.lbi" --> 
+<!--Popup Start-->
+<div id="maniacPointsModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h5 class="modal-title">MANIAC POINTS</h5>
+        <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a> </div>
+      <div class="modal-body form-body"> <span class="icon-position">16<sup>th</sup></span> <span class="badge-orange"><img id="maniacBadge" class="svg" src="img/badge.svg" alt=""/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+          <aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="earnPointsModal">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content modal-message">
+      <div class="modal-header">
+        <h5 class="modal-title">How do I Earn Points ?</h5>
+      </div>
+      <div class="modal-body">
+        <p>“Win points to get and keep your OCR Profile Card on the Home Page in the Top 10 Maniacs and to win monthly and annual prizes!  Every time you create new content for the OM community (e.g., publish and/or share an article, start a discussion or post pictures or videos), you get Maniac points.  The more points you gain, the more likely you are to win a prize.  Prizes are awarded monthly, so get started contributing content and sharing today!</p>
+        <p>Here’s a convenient list of the activities and points you earn by contributing to the OCR community on obstaclemaniac.com.”</p>
+        <h5>Profile Set Up</h5>
+        <ul class="ponts-disk">
+          <li>Complete Profile - 100 points (must include photo to get points)</li>
+          <li>Update your profile with a recent race - 10 points for each entry</li>
+          <li>Following an athlete - 5 points/athlete</li>
+          <li>Accepting a follower - 5 points/athlete</li>
+        </ul>
+        <h5>Articles</h5>
+        <ul class="ponts-disk">
+          <li>Authoring/Creating an article - 100 points</li>
+          <li>Sharing your article with Facebook - 50 points</li>
+          <li>Sharing your article with Twitter - 50 points</li>
+          <li>Commenting on an article - 5 points (max of 10 points awarded/article)</li>
+          <li>Sharing an article that someone else wrote on Facebook or Twitter 5 points each (max 20 points/article)</li>
+          <li>Getting a “Like” or a “Favorite” on an article you wrote - 5 point/like</li>
+        </ul>
+        <h5>Chat</h5>
+        <ul class="ponts-disk">
+          <li>Authoring at Chat - 50 points</li>
+          <li>Sharing your chat with Facebook - 25 points</li>
+          <li>Sharing your chat with Twitter - 25 points</li>
+          <li>Commenting on a chat - 5 points/comment (max of 15 points awarded/chat)</li>
+          <li>Sharing a chat on Facebook or Twitter 5 points each (max 15 points/chat)</li>
+        </ul>
+      </div>
+      <div class="modal-footer center-btns"><a class="btn-link" data-dismiss="modal">Back</a></div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="visible-xs"> <a class="has-notif" href="notification.html"><i class="icon-notification"></i> <span>Notifications</span></a></li>
+          <li class="dropdown hidden-xs"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-tabs-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <div class="nodata-panel">
+                      <div class="nodata-body"> <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small> </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link" href="notification.html">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile-about.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Settings</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a class="racereview"><span class="square"><i></i></span> <span class="label-text">Race Review</span> </a></li>
+                  <li><a class="trining"><span class="square"><i></i></span> <span class="label-text">Training</span> </a></li>
+                  <li><a class="obsreview"><span class="square"><i></i></span> <span class="label-text">Obstacle Review</span> </a></li>
+                  <li><a class="proreview"><span class="square"><i></i></span> <span class="label-text">Product Review</span> </a></li>
+                  <li><a class="inspiration"><span class="square"><i></i></span> <span class="label-text">Inspiration</span> </a></li>
+                  <li><a class="fuiling"><span class="square"><i></i></span> <span class="label-text">Fueling</span> </a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link" href="obstacle-library.html">View All</a></div>
+            </div>
+          </li>
+          <li><a data-toggle="globalSearch"><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+            <li><a href="dashboard.html">POST ARTICLES</a></li>
+            <li><a href="obstacle-chat.html">OBSTACLE CHAT</a></li>
+            <li><a class="scroll-link nextpage-scroll" data-rel="topOcrId">Top OCR Athletes</a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="global-search">
+      <div class="filter-action">
+        <div class="container">
+          <div class="dropdown no-overlay pull-left"> <a class="block" data-toggle="dropdown"><i class="icon-filter block"></i></a>
+            <div data-dropdown="onhold" class="dropdown-menu">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId2">
+                <label for="allId2">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId2">
+                <label for="articleId2">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId2">
+                <label for="chatId2">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId2">
+                <label for="videosId2">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId2">
+                <label for="photosId2">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span>
+          <div class="input-group"> <a class="input-group-addon"><i class="icon-search"></i></a>
+            <input type="text" placeholder="Quick Search" value="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="search-autosuggest scrollbox">
+        <div class="container">
+          <div class="row">
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">ARTICLES</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/default-category.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">CHAT</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">MEDIA</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading font-med">MANIACS</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span> </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- #EndLibraryItem -->
+<section class="main-section bgcolor-primary" data-height="fullheight">
+  <div class="cover-container">
+    <div class="cover-image">
+      <div class="draggable" style="display:none;"><img src="img/cover-default.jpg" alt=""/></div>
+      <div class="imgFill" id="coverViewimg"><img src="img/cover-default.jpg" alt=""/></div>
+    </div>
+    <div class="edit-cover">
+      <div class="container">
+        <div class="dropdown no-overlay no-overlap"> <a class="edit-btn dropdown-toggle hidden-xs" data-toggle="dropdown"><i class="icon-edit"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a><i class="icon-upload-sm"></i><span>Upload New</span></a></li>
+            <li><a><i class="icon-remove-circle"></i><span>Remove</span></a></li>
+          </ul>
+          <div class="action-conver hidden-xs">
+            <button class="btn btn-primary btn-sm">Apply</button>
+            <button id="cancelCover" class="btn btn-info btn-sm">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-details">
+      <div class="container">
+        <figure class="profile-pic">
+          <div class="dropdown no-overlay no-overlap"> <a class="edit-btn dropdown-toggle" data-toggle="dropdown"><i class="icon-edit"></i></a>
+            <ul class="dropdown-menu">
+              <li><a><i class="icon-upload-sm"></i><span>Upload New</span></a></li>
+              <li><a><i class="icon-remove-circle"></i><span>Remove</span></a></li>
+            </ul>
+          </div>
+          <img src="img/user-pic.jpg" class="img-thumbnail" alt=""/> </figure>
+        <div class="details">
+          <h3 class="title"><span>Shri Alwtwo</span> <small>OCR athlete</small></h3>
+          <ul class="nav nav-pills">
+            <li>Male</li>
+            <li>5-10 Years</li>
+            <li class="address">Beverly hills, Unoited States</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inner">
+    <div class="container">
+      <div class="navbar-header hidden-xs">&nbsp;</div>
+      <ul class="nav navbar-nav">
+        <li><a href="profile-about.html">ABOUT</a></li>
+        <li><a href="profile-connection.html">CONNECTIONS <small>(999+)</small></a></li>
+        <li><a href="profile-post.html">POSTS <small>(489+)</small></a></li>
+        <li class="active"><a href="my-draft.html">MY DRAFTS <small>(12)</small></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-section">
+    <div class="container">
+      <ul class="grid-list row">
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail new">
+            <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceateArticleTab')"><img src="img/blank-category.png" width="270" height="150" alt=""><img src="img/img1.jpg" width="270" height="150" class="main-img" alt=""/></a></figure>
+            <div class="caption">
+              <h6>JEFF SHADY</h6>
+              <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail">
+            <figure class="catbadge-fueling" data-placeholder="FUELING"><a><img src="img/blank-category.png" width="270" height="150" alt=""><img src="img/img2.jpg" width="270" height="150" class="main-img" alt=""/></a></figure>
+            <div class="caption">
+              <h6>JOSHUA Z WONITZER</h6>
+              <p>Rest day reflection and planning check out my latest...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail">
+            <figure class="catbadge-fueling" data-placeholder="FUELING"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+            <div class="caption">
+              <h6>JOSHUA Z WONITZER</h6>
+              <p>Rest day reflection and planning check out my latest...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail new">
+            <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+            <div class="caption">
+              <h6>JEFF SHADY</h6>
+              <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail">
+            <figure class="catbadge-product" data-placeholder="PRODUCT REVIEW"><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+            <div class="caption">
+              <h6>JOSHUA Z WONITZER</h6>
+              <p>Rest day reflection and planning check out my latest...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail">
+            <figure><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+            <div class="caption">
+              <h6>JEFF SHADY</h6>
+              <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail video-thumbnail">
+            <figure><img src="img/img2.jpg" width="270" height="150" alt=""/><a class="video-btn"><i class="icon-play"></i></a></figure>
+            <div class="caption">
+              <h6>JOSHUA Z WONITZER</h6>
+              <p>Rest day reflection and planning check out my latest...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail">
+            <figure><img src="img/img2.jpg" width="270" height="150" alt=""/></figure>
+            <div class="caption">
+              <h6>JOSHUA Z WONITZER</h6>
+              <p>Rest day reflection and planning check out my latest...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail chat-thumbnail">
+            <figure class="catbadge-obstacle" data-placeholder="OBSTACLE REVIEW"><img src="img/blank-category.png" width="270" height="150" alt=""/><span class="chat-thumb" data-imgsrc="img/thumb98x98.jpg"><img src="img/thumb98x98.jpg" width="98" height="98" class="img-rounded" alt=""/></span></figure>
+            <div class="caption">
+              <h6>JEFF SHADY</h6>
+              <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+            </div>
+          </div>
+        </li>
+        <li class="col-md-3 col-sm-4">
+          <div class="thumbnail">
+            <figure><img src="img/img1.jpg" width="270" height="150" alt=""/></figure>
+            <div class="caption">
+              <h6>RYAN KENT</h6>
+              <p>Only YOU can stop you! Sign up for Atlas Race today...</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a href="about.html">About us</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="help-and-support.html">Help &amp; Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="advertise.html">Advertise with us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem --> 
+<!--Create Popups-->
+<div id="createModal" class="modal fade" data-backdrop="static" data-replace="true" tabindex="-1" data-ng-controller="RatyCtrl">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content modal-edit">
+      <div class="modal-header">
+        <h5 class="modal-title">My Draft</h5>
+      </div>
+      <div class="modal-body">
+        <div id="editArticle">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"> <span class="pull-right help-block">{{50-title.length}}</span>
+                      <div class="control-label">TITLE <span class="mandatory">*</span></div>
+                      <input type="text" placeholder="" value="" class="form-control" maxlength="50" data-ng-trim="false" ng-model="title" id="focusId">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">CATEGORY <span class="mandatory">*</span></div>
+                      <select class="form-control" data-chosen>
+                        <option>Please select</option>
+                        <option>CATEGORY</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group"> <span class="pull-right help-block">{{30-likeToRate.length}}</span>
+                    <div class="control-label">I’D LIKE TO RATE... <span class="mandatory">*</span></div>
+                    <div class="input-group">
+                      <input type="text" class="form-control" value="" ng-model="likeToRate" placeholder="Race event or product you would like to rate. e.g. Nike Shoes">
+                      <div class="input-group-addon addon-rating"><span class="start-rating" data-score="3.0" data-ng-raty="ratyOptions" data-ng-model="rating.current" data-mouse-over="demo.mouseOver(stars, e);" data-mouse-out="demo.mouseOut(stars, e);"></span></div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group" data-ng-controller="SummernoteController">
+                    <div class="control-label">ARTICLE</div>
+                    <textarea data-summernote="" rows="10" data-placeholder="123">Start Writing... You can use the tools  above to format your text and add or embed images &amp; videos inline your article. If you embed any media hosted elsewhere, it’ll show only as long as it</textarea>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <div class="control-label">SEARCH TAGS <small>Add upto 3</small></div>
+                    <input type="text" class="form-control" value="" placeholder="e.g, Like what is this article about, Atticle title, Maniacs">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row bgcolor-primary">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="form-group">
+                  <div class="control-label">UPLOAD MEDIA</div>
+                  <div class="panel upload-panel">
+                    <div class="media">
+                      <div class="media-left media-middle"> <span class="upload-media"><i class="icon-upload"></i></span> </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Choose Photos</h4>
+                        <small class="font-sm">Upload photos from, you can add multiple</small> </div>
+                      <div class="media-right"> <span class="btn btn-primary file-upload">UPLOAD
+                        <input type="file">
+                        </span> </div>
+                    </div>
+                    <span class="or"></span>
+                    <div class="media">
+                      <div class="media-left media-bottom"> <span class="upload-media"><i class="icon-urlbig"></i></span> </div>
+                      <div class="media-body"> <small class="block">URL or embed-code for Pics or video from youtube, vimeo, instagram</small>
+                        <input type="text" placeholder="URLor embed-code for  image you would like to link" value="" class="form-control">
+                      </div>
+                      <div class="media-right media-bottom"> <a class="btn btn-info btn-block">Add</a> </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <ul class="attached-media">
+                      <li class="active"> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId1" name="coverpic" checked>
+                        <label for="coverpicId1">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img2.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId2" name="coverpic">
+                        <label for="coverpicId2">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a> <span class="video-btn"><i class="icon-playsml"></i></span>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId3" name="coverpic">
+                        <label for="coverpicId3">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img2.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId4" name="coverpic">
+                        <label for="coverpicId4">COVER PIC</label>
+                        </span> </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <input type="text" placeholder="Put a caption for the selected one" value="" class="form-control">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="right-btns mar-top-20"><a class="font-med" data-dismiss="modal">Cancel</a> <a class="btn btn-primary" data-dismiss="modal">PUBLISH</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/angular.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/chosen-min.js"></script> 
+<script src="js/main.js"></script> 
+<script src="js/Controllers.js"></script> 
+<script>
+$(function () {
+    $(".responsive-tabs").responsiveTabs();
+});
+
+function createModal(tab){
+	$('#createModal').on('show.bs.modal',function(){
+	  setTimeout(function(){
+		if(!$('.note-dialog>div').is(':visible')){
+		  $('.modal-create .tab-pane').removeClass('active in');
+		  $('.modal-create .nav-tabs li').removeClass('active');
+		  $('.modal-create .nav-tabs a[href="#' + tab + '"]').tab('show');
+		}
+	  },0);
+	  if(( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
+		$('.note-toolbar .btn').tooltip('destroy');
+	  }
+	});
+}
+$('#createModal').on('hide.bs.modal',function(){
+  if($('body').find('.modal-backdrop').length<=2){
+	$('body').find('.modal-backdrop').not(':first').remove();
+  }
+});
+$('#createModal').on('show.bs.modal',function(){
+	$('.note-dialog>div').on('hidden.bs.modal',function(){
+	  setTimeout(function(){
+		$('body').addClass('modal-open');
+	  },0);
+	});
+	$('.note-dialog>div').modal('hide');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1141 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>:: Obstacle Maniac ::</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body data-ng-app="ObstacleManiac"><!-- #BeginLibraryItem "/Library/header-after-login.lbi" -->
+<!--Popup Start-->
+<div id="maniacPointsModal" class="modal fade" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content maniac-panel">
+      <div class="modal-header">
+        <h5 class="modal-title">MANIAC POINTS</h5>
+        <a class="btn-link" data-toggle="modal" data-target="#earnPointsModal">How do I Earn Points ?</a>
+      </div>
+      <div class="modal-body form-body">
+      	<span class="icon-position">16<sup>th</sup></span>
+        <span class="badge-orange"><img id="maniacBadge" class="svg" src="img/badge.svg" alt=""/>4K</span>
+        <p><span class="orange-text">4518</span> This Month</p>
+        <p>Top Maniac Earned <span class="green-text">2000</span></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+      		<aside class="col-xs-6"><span class="orange-text">6225</span> Annual</aside>
+        	<aside class="col-xs-6"><span class="orange-text">6478</span> Overall</aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="earnPointsModal">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content modal-message">
+      <div class="modal-header">
+        <h5 class="modal-title">How do I Earn Points ?</h5>
+      </div>
+      <div class="modal-body">
+        <p>“Win points to get and keep your OCR Profile Card on the Home Page in the Top 10 Maniacs and to win monthly and annual prizes!  Every time you create new content for the OM community (e.g., publish and/or share an article, start a discussion or post pictures or videos), you get Maniac points.  The more points you gain, the more likely you are to win a prize.  Prizes are awarded monthly, so get started contributing content and sharing today!</p>
+        <p>Here’s a convenient list of the activities and points you earn by contributing to the OCR community on obstaclemaniac.com.”</p>
+        <h5>Profile Set Up</h5>
+        <ul class="ponts-disk">
+          <li>Complete Profile - 100 points (must include photo to get points)</li>
+          <li>Update your profile with a recent race - 10 points for each entry</li>
+          <li>Following an athlete - 5 points/athlete</li>
+          <li>Accepting a follower - 5 points/athlete</li>
+        </ul>
+        <h5>Articles</h5>
+        <ul class="ponts-disk">
+          <li>Authoring/Creating an article - 100 points</li>
+          <li>Sharing your article with Facebook - 50 points</li>
+          <li>Sharing your article with Twitter - 50 points</li>
+          <li>Commenting on an article - 5 points (max of 10 points awarded/article)</li>
+          <li>Sharing an article that someone else wrote on Facebook or Twitter 5 points each (max 20 points/article)</li>
+          <li>Getting a “Like” or a “Favorite” on an article you wrote - 5 point/like</li>
+        </ul>
+        <h5>Chat</h5>
+        <ul class="ponts-disk">
+          <li>Authoring at Chat - 50 points</li>
+          <li>Sharing your chat with Facebook - 25 points</li>
+          <li>Sharing your chat with Twitter - 25 points</li>
+          <li>Commenting on a chat - 5 points/comment (max of 15 points awarded/chat)</li>
+          <li>Sharing a chat on Facebook or Twitter 5 points each (max 15 points/chat)</li>
+        </ul>
+      </div>
+      <div class="modal-footer center-btns"><a class="btn-link" data-dismiss="modal">Back</a></div>
+    </div>
+  </div>
+</div>
+<!--Popup End-->
+
+<header>
+  <div data-role="sticky">
+    <nav class="navbar navbar-inverse" data-toggle="inverseDropdown">
+      <div class="container">
+        <button type="button" class="navbar-toggle visible-xs"><i class="icon-userbar"></i></button>
+        <ul class="nav navbar-nav navbar-user">
+          <li class="visible-xs"> <a class="has-notif" href="notification.html"><i class="icon-notification"></i> <span>Notifications</span></a></li>
+          <li class="dropdown hidden-xs"> <a class="dropdown-toggle has-notif" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-notification"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu" data-dropdown="onhold">
+              <div role="tabpanel">
+                <ul class="nav nav-tabs nav-tabs-justified navbar-tabs" id="notificationTab">
+                  <li class="active"><a data-toggle="tab" href="#notifications">NOTIFICATIONS</a></li>
+                  <li><a data-toggle="tab" href="#message">MESSAGES</a></li>
+                </ul>
+                <div class="tab-content scrollbox">
+                  <div id="notifications" class="tab-pane fade in active">
+                    <ul class="media-list media-list-striped">
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                      <li class="media">
+                        <div class="media-left media-middle"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""/></a> </div>
+                        <div class="media-body">
+                          <div><a class="btn-link">Ryan Kent</a> <span class="light-gray">Followed</span> Joshua Z</div>
+                          <span class="light-gray">3 hrs ago</span> </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="message" class="tab-pane fade">
+                    <div class="nodata-panel">
+                      <div class="nodata-body">
+                        <i><img src="img/nodata-icon.png" width="140" height="140" alt=""/></i>
+                        <h4>Missing information</h4>
+                        <small class="font-basic font-normal">Fill up your <a class="btn-link">profile</a> and earn points let fellow maniacs know about you</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer"><a class="btn-link" href="notification.html">View All</a></div>
+              </div>
+            </div>
+          </li>
+          <li><a data-target="#maniacPointsModal" data-toggle="modal"><i class="icon-points"></i> <span class="visible-xs-inline">Points</span> <span class="points">1530</span></a></li>
+          <li class="user-control"><a href="profile-about.html"><span class="user-pic"><img src="img/user.jpg" width="30" height="30" class="block hidden-xs" alt=""/></span> <span class="visible-xs-inline">Profile </span> <span class="user-name">Dinesh Kumar</span></a></li>
+          <li><a href="settings.html"><i class="icon-setting"></i> <span class="visible-xs-inline">Settings</span></a></li>
+          <li><a href="signup.html"><i class="icon-logout"></i> <span class="visible-xs-inline">Logout</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-default">
+      <div class="container"> <a href="home.html" class="navbar-brand"><img src="img/logo.png" class="img-responsive" width="157" height="100" alt=""/></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <ul class="nav navbar-nav nav-right">
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-menu"></i></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-large" role="menu">
+              <label class="dropdown-header">CATEGORIES</label>
+              <div class="scrollbox">
+                <ul class="thumb-action clearfix">
+                  <li><a class="racereview"><span class="square"><i></i></span>
+                    <span class="label-text">Race Review</span>
+                    </a></li>
+                  <li><a class="trining"><span class="square"><i></i></span>
+                    <span class="label-text">Training</span>
+                    </a></li>
+                  <li><a class="obsreview"><span class="square"><i></i></span>
+                    <span class="label-text">Obstacle Review</span>
+                    </a></li>
+                  <li><a class="proreview"><span class="square"><i></i></span>
+                    <span class="label-text">Product Review</span>
+                    </a></li>
+                  <li><a class="inspiration"><span class="square"><i></i></span>
+                    <span class="label-text">Inspiration</span>
+                    </a></li>
+                  <li><a class="fuiling"><span class="square"><i></i></span>
+                    <span class="label-text">Fueling</span>
+                    </a></li>
+                </ul>
+              </div>
+              <div class="dropdown-footer"><a class="btn-link" href="obstacle-library.html">View All</a></div>
+            </div>
+          </li>
+          <li><a data-toggle="globalSearch"><i class="icon-search"></i></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+          	<li><a href="dashboard.html">POST ARTICLES</a></li>
+          	<li><a href="obstacle-chat.html">OBSTACLE CHAT</a></li>
+            <li><a class="scroll-link nextpage-scroll" data-rel="topOcrId">Top OCR Athletes</a></li>
+            <li><a href="dashboard.html">MY DASHBOARD</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="global-search">
+      <div class="filter-action">
+        <div class="container">
+          <div class="dropdown no-overlay pull-left"> <a class="block" data-toggle="dropdown"><i class="icon-filter block"></i></a>
+            <div data-dropdown="onhold" class="dropdown-menu">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId2">
+                <label for="allId2">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId2">
+                <label for="articleId2">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId2">
+                <label for="chatId2">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId2">
+                <label for="videosId2">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId2">
+                <label for="photosId2">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span>
+          <div class="input-group">
+          	<a class="input-group-addon"><i class="icon-search"></i></a>
+            <input type="text" placeholder="Quick Search" value="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="search-autosuggest scrollbox">
+        <div class="container">
+          <div class="row">
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">ARTICLES</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/default-category.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">CHAT</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading">MEDIA</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img src="img/img1.jpg" alt=""/></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img alt="" src="img/blank-category.png"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Have u ever participated in the #BattleFrog?</div>
+                  </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+            <aside class="col-md-3 col-sm-6">
+              <div class="heading font-med">MANIACS</div>
+              <ul class="user-list">
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+                <li> <a class="media">
+                  <div class="media-left">
+                    <figure><img class="img-rounded" alt="" src="img/thumb60x60.jpg"></figure>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Jeff Shady</div>
+                    <small class="font-bold font-xs">OCR ATHLETE</small> </div>
+                  </a> </li>
+              </ul>
+              <span class="more-link"><a class="btn-link">View all</a></span>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- #EndLibraryItem --><section class="bgcolor-primary" data-height="fullheight">
+  <div class="content-section">
+    <div class="container">
+      <div class="filter-wrap clearfix">
+        <div class="filter-action pull-left">
+          <div class="dropdown no-overlay"> <a data-toggle="dropdown" class="block"><i class="icon-filter block"></i></a>
+            <div class="dropdown-menu" data-dropdown="onhold">
+              <div class="checkbox-group"> <span class="checkbox">
+                <input type="checkbox" id="allId">
+                <label for="allId">All</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="articleId">
+                <label for="articleId">Article</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="chatId">
+                <label for="chatId">Chat</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="videosId">
+                <label for="videosId">Videos</label>
+                </span> <span class="checkbox">
+                <input type="checkbox" id="photosId">
+                <label for="photosId">Photos</label>
+                </span> </div>
+            </div>
+          </div>
+          <span class="separator"></span> <span class="text">Know what your connections say...</span> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-md-push-9">
+          <div class="thumbnail create-btns">
+            <ul class="tabs-btn clearfix">
+              <li><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceateArticleTab')"><i class="icon-article-small"></i>ARTICLE</a></li>
+              <li><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceateChatTab')"><i class="icon-chat-small"></i>CHAT</a></li>
+              <li><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceatePhotoTab')"><i class="icon-photo-small"></i>PHOTOS</a></li>
+              <li><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceateVideoTab')"><i class="icon-video-small"></i>VIDEO</a></li>
+              <li><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceateFeedTab')"><i class="icon-feed-small"></i>FEED</a></li>
+              <li><a data-target="#createModal" data-toggle="modal" onClick="createModal('ceateMessageTab')"><i class="icon-message-small"></i>MESSAGE</a></li>
+            </ul>
+          </div>
+          <div class="thumbnail google-thumbnail google-thumbnail-sm"><a href="advertise.html"><img width="277" height="244" alt="" src="img/google-ad-277x244.jpg"></a></div>
+          <div class="panel panel-success">
+          	<div class="panel-heading ellipsis">You Can Also See</div>
+          	<div class="panel-body">
+                <ul class="user-list userlist-primary">
+                  <li class="media">
+                    <div class="media-left"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""></a> </div>
+                    <div class="media-body">
+                      <div class="font-med font-basic"><a class="btn-link">Billy Bailey</a> posted chat on “<a class="btn-link">OCR championship</a>”</div>
+                      <div class="social-action action-default"> <a class="msg-count">200</a> <a class="like-count">245</a> </div>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""></a> </div>
+                    <div class="media-body">
+                      <div class="font-med font-basic"><a class="btn-link">Billy Bailey</a> posted chat on “<a class="btn-link">OCR championship</a>”</div>
+                      <div class="social-action action-default"> <a class="msg-count">200</a> <a class="like-count">245</a> </div>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""></a> </div>
+                    <div class="media-body">
+                      <div class="font-med font-basic"><a class="btn-link">Billy Bailey</a> posted chat on “<a class="btn-link">OCR championship</a>”</div>
+                      <div class="social-action action-default"> <a class="msg-count">200</a> <a class="like-count">245</a> </div>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left"> <a href="#"><img src="img/thumb36x36.jpg" class="img-rounded" width="36" height="36" alt=""></a> </div>
+                    <div class="media-body">
+                      <div class="font-med font-basic"><a class="btn-link">Billy Bailey</a> posted chat on “<a class="btn-link">OCR championship</a>”</div>
+                      <div class="social-action action-default"> <a class="msg-count">200</a> <a class="like-count">245</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-9 col-md-pull-3">
+          <ul class="grid-list row">
+            <li class="col-sm-4">
+              <div class="thumbnail">
+                <figure class="catbadge-training"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/img1.jpg" width="270" height="150" class="main-img" alt=""/></a><label>TRAINING</label></figure>
+                <div class="caption">
+                  <h6>RYAN KENT</h6>
+                  <p><strong>Have u ever participated in the #BattleFrog? What were your.</strong></p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail">
+                <figure class="catbadge-training"><a><img src="img/blank-category.png" width="270" height="150" alt=""/><img src="img/img2.jpg" width="270" height="150" class="main-img" alt=""/></a><label>TRAINING</label><span class="media-count">
+                  <label>6</label>
+                  </span> </figure>
+                <div class="caption">
+                  <h6>RYAN KENT</h6>
+                  <p><strong>Have u ever participated in the #BattleFrog? What were your.</strong></p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail video-thumbnail loader">
+                <figure class="catbadge-race" data-placeholder="RACE REVIEW"><img src="img/img1.jpg" width="270" height="150" alt=""> <a class="video-btn"><i class="icon-play"></i></a> </figure>
+                <div class="caption">
+                  <h6>CORINNA COFFIN</h6>
+                  <p><strong>Have u ever participated in the #BattleFrog? What were your.</strong></p>
+                </div>
+                <span class="sk-wave">
+                  <i class="sk-rect sk-rect1"></i>
+                  <i class="sk-rect sk-rect2"></i>
+                  <i class="sk-rect sk-rect3"></i>
+                  <i class="sk-rect sk-rect4"></i>
+                  <i class="sk-rect sk-rect5"></i>
+                </span>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail chat-thumbnail">
+                <figure class="catbadge-product">
+                  <a><img src="img/blank-category.png" width="270" height="150" alt="">
+                    <span class="chat-thumb" data-imgsrc="img/thumb98x98.jpg"><img src="img/thumb98x98.jpg" width="98" height="98" class="img-rounded" alt=""></span></a>
+                    <label>PRODUCT REVIEW</label>
+                </figure>
+                <div class="caption">
+                  <h6>JOSHUA Z WONITZER</h6>
+                  <p><strong>Rest day reflection and planning check out my latest.</strong></p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail new">
+                <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><img src="img/img2.jpg" width="270" height="150" alt=""></figure>
+                <div class="caption">
+                  <h6>JEFF SHADY</h6>
+                  <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail video-thumbnail">
+                <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""> <a class="video-btn"><i class="icon-play"></i></a> </figure>
+                <div class="caption">
+                  <h6>RYAN KENT</h6>
+                  <p><strong>Have u ever participated in the #BattleFrog? What were your.</strong></p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail new">
+                <figure class="catbadge-inspiration" data-placeholder="INSPIRATION"><img src="img/img1.jpg" width="270" height="150" alt=""></figure>
+                <div class="caption">
+                  <h6>JEFF SHADY</h6>
+                  <p>Congratulations to the Top 3 Elite Men and Women Finishers...</p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail">
+                <figure class="catbadge-training" data-placeholder="TRAINING"><img src="img/img1.jpg" width="270" height="150" alt=""></figure>
+                <div class="caption">
+                  <h6>RYAN KENT</h6>
+                  <p><strong>Have u ever participated in the #BattleFrog? What were your.</strong></p>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <div class="thumbnail">
+                <figure class="catbadge-fueling" data-placeholder="FUELING"><img src="img/img1.jpg" width="270" height="150" alt=""> <span class="media-count">
+                  <label>10</label>
+                  </span> </figure>
+                <div class="caption">
+                  <h6>RYAN KENT</h6>
+                  <p><strong>Have u ever participated in the #BattleFrog? What were your.</strong></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="loader-more">
+            <span class="sk-wave">
+              <i class="sk-rect sk-rect1"></i>
+              <i class="sk-rect sk-rect2"></i>
+              <i class="sk-rect sk-rect3"></i>
+              <i class="sk-rect sk-rect4"></i>
+              <i class="sk-rect sk-rect5"></i>
+            </span>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</section><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<footer class="text-center">
+  <div class="container">
+    <ul class="social-icons">
+      <li><a href="404.html"><i class="icon-twitter"></i></a></li>
+      <li><a href="404.html"><i class="icon-facebook"></i></a></li>
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a href="about.html">About us</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="help-and-support.html">Help &amp; Support</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="advertise.html">Advertise with us</a></li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; 2015  Obstacle Maniac! All right reserved</div>
+</footer>
+<a class="backto-top"><i class="icon-top"></i></a><!-- #EndLibraryItem -->
+<!--Create Popups-->
+<div id="createModal" class="modal fade" data-backdrop="static" data-replace="true" tabindex="-1" data-ng-controller="RatyCtrl">
+  <div class="modal-dialog modal-lg" data-ng-init="showHideMode=false">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content responsive-tabs modal-create" data-ng-hide="showHideMode" data-role="tabpanel">
+      <div class="modal-header">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <ul class="nav nav-tabs nav-tabs-justified">
+              <li><a href="#ceateArticleTab" data-toggle="tab"><i class="icon-article"></i> ARTICLE</a></li>
+              <li><a href="#ceateChatTab" data-toggle="tab"><i class="icon-chat"></i> CHAT</a></li>
+              <li><a href="#ceatePhotoTab" data-toggle="tab"><i class="icon-photo"></i> PHOTOS</a></li>
+              <li><a href="#ceateVideoTab" data-toggle="tab"><i class="icon-video"></i> VIDEO</a></li>
+              <li><a href="#ceateFeedTab" data-toggle="tab"><i class="icon-feed"></i> FEED</a></li>
+              <li><a href="#ceateMessageTab" data-toggle="tab"><i class="icon-message"></i> MESSAGE</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body tab-content">
+        <div class="tab-pane fade" id="ceateArticleTab">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"> <span class="pull-right help-block">{{50-title.length}}</span>
+                      <div class="control-label">TITLE <span class="mandatory">*</span></div>
+                      <input type="text" placeholder="" value="" class="form-control" maxlength="50" data-ng-trim="false" ng-model="title" id="focusId">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">CATEGORY <span class="mandatory">*</span></div>
+                      <select class="form-control" data-chosen>
+                        <option>Please select</option>
+                        <option>CATEGORY</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group"> <span class="pull-right help-block">30</span>
+                    <div class="control-label">I’D LIKE TO RATE... <span class="mandatory">*</span></div>
+                    <div class="input-group">
+                      <input type="text" class="form-control" value="" placeholder="Race event or product you would like to rate. e.g. Nike Shoes">
+                      <div class="input-group-addon addon-rating"><span class="start-rating" data-score="3.0" data-ng-raty="ratyOptions" data-ng-model="rating.current" data-mouse-over="demo.mouseOver(stars, e);" data-mouse-out="demo.mouseOut(stars, e);"></span></div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group" data-ng-controller="SummernoteController">
+                    <div class="control-label">ARTICLE</div>
+                    <textarea data-summernote="" rows="10" data-placeholder="123">Start Writing... You can use the tools  above to format your text and add or embed images &amp; videos inline your article. If you embed any media hosted elsewhere, it’ll show only as long as it</textarea>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <div class="control-label">SEARCH TAGS <small>Add upto 3</small></div>
+                    <input type="text" class="form-control" value="" placeholder="e.g, Like what is this article about, Atticle title, Maniacs">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row bgcolor-primary">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="form-group">
+                  <div class="control-label">UPLOAD MEDIA</div>
+                  <div class="panel upload-panel">
+                    <div class="media">
+                      <div class="media-left media-middle"> <span class="upload-media"><i class="icon-upload"></i></span> </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Choose Photos</h4>
+                        <small class="font-sm">Upload photos from, you can add multiple</small> </div>
+                      <div class="media-right"> <span class="btn btn-primary file-upload">UPLOAD
+                        <input type="file">
+                        </span> </div>
+                    </div>
+                    <span class="or"></span>
+                    <div class="media">
+                      <div class="media-left media-bottom"> <span class="upload-media"><i class="icon-urlbig"></i></span> </div>
+                      <div class="media-body"> <small class="block">URL or embed-code for Pics or video from youtube, vimeo, instagram</small>
+                        <input type="text" placeholder="URLor embed-code for  image you would like to link" value="" class="form-control">
+                      </div>
+                      <div class="media-right media-bottom"> <a class="btn btn-info btn-block">Add</a> </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <ul class="attached-media">
+                      <li class="active"> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId1" name="coverpic" checked>
+                        <label for="coverpicId1">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img2.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId2" name="coverpic">
+                        <label for="coverpicId2">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a> <span class="video-btn"><i class="icon-playsml"></i></span>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId3" name="coverpic">
+                        <label for="coverpicId3">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img2.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId4" name="coverpic">
+                        <label for="coverpicId4">COVER PIC</label>
+                        </span> </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <input type="text" placeholder="Put a caption for the selected one" value="" class="form-control">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel">
+                  <li class="row form-action multi-action">
+                    <aside class="col-sm-3 text-link text-left">
+                    	<a class="btn-link" data-ng-click="showArticlePreview()">Preview</a>
+                    </aside>
+                    <aside class="col-sm-9 right-btns">
+                        <a class="font-med" data-dismiss="modal" ng-click="ClearMe();" id="cancel21">Cancel</a>
+                        <a class="btn btn-info">SAVE AS DRAFT</a>
+                        <a class="btn btn-primary" href="article-view.html">PUBLISH</a>
+                    </aside>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ceateChatTab">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"> <span class="pull-right help-block">30</span>
+                      <div class="control-label">TOPIC <span class="mandatory">*</span></div>
+                      <input type="text" placeholder="" value="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">CATEGORY <span class="mandatory">*</span></div>
+                      <select class="form-control" data-chosen>
+                        <option>Please select</option>
+                        <option>CATEGORY</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group"> <span class="pull-right help-block">250</span>
+                    <div class="control-label">START A DISCUSSION</div>
+                    <textarea class="form-control"></textarea>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <div class="control-label">SEARCH TAGS <small>Add upto 3</small></div>
+                    <input type="text" class="form-control" value="" placeholder="e.g, Like what is this article about, Atticle title, Maniacs">
+                  </div>
+                </li>
+                <li class="right-btns"><a class="font-med" data-dismiss="modal">Cancel</a> <a class="btn btn-primary" href="chat-view.html">POST</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ceatePhotoTab">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"> <span class="pull-right help-block">30</span>
+                      <div class="control-label">NAME OF THE PHOTO ALBUM <span class="mandatory">*</span></div>
+                      <input type="text" placeholder="" value="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">CATEGORY <span class="mandatory">*</span></div>
+                      <select class="form-control" data-chosen>
+                        <option>Please select</option>
+                        <option>CATEGORY</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <div class="control-label">SEARCH TAGS <small>Add upto 3</small></div>
+                    <input type="text" class="form-control" value="" placeholder="e.g, Like what is this article about, Atticle title, Maniacs">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row bgcolor-primary">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="form-group">
+                  <div class="control-label">UPLOAD MEDIA</div>
+                  <div class="panel upload-panel">
+                    <div class="media">
+                      <div class="media-left media-middle"> <span class="upload-media"><i class="icon-upload"></i></span> </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Choose Photos</h4>
+                        <small class="font-sm">Upload photos from, you can add multiple</small> </div>
+                      <div class="media-right"> <span class="btn btn-primary file-upload">UPLOAD
+                        <input type="file">
+                        </span> </div>
+                    </div>
+                    <span class="or"></span>
+                    <div class="media">
+                      <div class="media-left media-bottom"> <span class="upload-media"><i class="icon-urlbig"></i></span> </div>
+                      <div class="media-body"> <small class="block">URL or embed-code for Pics</small>
+                        <input type="text" placeholder="URL or embed-code for photo" value="" class="form-control">
+                      </div>
+                      <div class="media-right media-bottom"> <a class="btn btn-info btn-block">Add</a> </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <ul class="attached-media">
+                      <li class="active"> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId1a" name="coverpic" checked>
+                        <label for="coverpicId1a">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img2.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId2a" name="coverpic">
+                        <label for="coverpicId2a">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a> <span class="video-btn"><i class="icon-playsml"></i></span>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId3a" name="coverpic">
+                        <label for="coverpicId3a">COVER PIC</label>
+                        </span> </li>
+                      <li> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img2.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId4a" name="coverpic">
+                        <label for="coverpicId4a">COVER PIC</label>
+                        </span> </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <input type="text" placeholder="Put a caption for the selected one" value="" class="form-control">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel">
+                <li class="right-btns"> <a class="font-med" data-dismiss="modal">Cancel</a> <a class="btn btn-primary" href="photo-view.html">POST</a> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ceateVideoTab">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"> <span class="pull-right help-block">30</span>
+                      <div class="control-label">TOPIC <span class="mandatory">*</span></div>
+                      <input type="text" placeholder="" value="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">CATEGORY <span class="mandatory">*</span></div>
+                      <select class="form-control" data-chosen>
+                        <option>Please select</option>
+                        <option>CATEGORY</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <div class="control-label">SEARCH TAGS <small>Add upto 3</small></div>
+                    <input type="text" class="form-control" value="" placeholder="e.g Like what is this video about ">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row bgcolor-primary">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+                <li class="form-group">
+                  <div class="control-label">UPLOAD MEDIA</div>
+                  <div class="panel upload-panel">
+                    <div class="media">
+                      <div class="media-left media-bottom"> <span class="upload-media"><i class="icon-urlbig"></i></span> </div>
+                      <div class="media-body"> <small class="block">URL or embed-code for Pics</small>
+                        <input type="text" placeholder="URL or embed-code for photo" value="" class="form-control">
+                      </div>
+                      <div class="media-right media-bottom"> <a class="btn btn-info btn-block">Add</a> </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <ul class="attached-media">
+                      <li class="active"> <a class="icon-smlremove"></a>
+                        <figure><img src="img/img1.jpg" width="270" height="150" class="img-full" alt=""/></figure>
+                        <span class="radio">
+                        <input type="radio" id="coverpicId1b" name="coverpic" checked>
+                        <label for="coverpicId1b">COVER PIC</label>
+                        </span> </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group">
+                    <input type="text" placeholder="Put a caption" value="" class="form-control">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel">
+                <li class="right-btns"> <a class="font-med" data-dismiss="modal">Cancel</a> <a class="btn btn-primary" href="video-view.html">POST</a> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ceateFeedTab">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="form-panel mar-top-20">
+              	<li>
+                  <div class="form-group">
+                    <div class="control-label">TITLE <span class="mandatory">*</span></div>
+                    <input type="text" class="form-control" value="" placeholder="">
+                  </div>
+                </li>
+                <li class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">URL <span class="mandatory">*</span></div>
+                      <input type="text" placeholder="" value="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <div class="control-label">CATEGORY <span class="mandatory">*</span></div>
+                      <select class="form-control" data-chosen>
+                        <option>Please select</option>
+                        <option>CATEGORY</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li class="right-btns"><a class="font-med" data-dismiss="modal">Cancel</a> <a class="btn btn-primary">ADD</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ceateMessageTab">
+          <div class="nodata-panel">
+            <div class="nodata-body"> <i><img width="140" height="140" alt="" src="img/nodata-icon.png"></i>
+              <h4>Message Field</h4>
+              <small class="font-basic font-normal">These fields comes from social network.</small> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-content viewmode-page" data-ng-show="state == 'ARTICLEPREVIEW'">
+      <div class="modal-header viewmode-header viewmode-image">
+      	<figure><img src="img/default-category.jpg" class="img-responsive" width="300" height="167" alt=""/></figure>
+        <article class="text-left">
+            <div class="media">
+              <div class="media-left"><img width="36" height="36" alt="" class="img-rounded" src="img/thumb36x36.jpg"></div>
+              <div class="media-body media-middle">
+                <ul class="separate-list clearfix">
+                  <li class="font-xs font-bold">JEFF SHADY</li>
+                  <li><span class="star-count">1023</span> <span class="badge-yellow"><img class="svg" src="img/badge.svg" alt=""/>4K</span></li>
+                  <li>
+                    <div class="dropdown no-overlay follow-unfollow"> <a data-toggle="dropdown" class="square unfollow"><i></i></a>
+                      <div class="dropdown-menu dropdown-menu-right"><a><span class="square follow"><i></i></span> <span class="text">Unfollow</span></a></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <h4>Congratulations to the Top 3 Elite Men and Women Finishers.</h4>
+            <p class="date">APR 17, 2015</p>
+            <p class="font-sm"><a class="btn-link">#Reebok</a>, <a class="btn-link">#Addidas</a>, <a class="btn-link">#Nike</a></p>
+            <div class="rating-wrap"><small>Author Rated</small> Nike Shoes <span class="start-rating" data-score="3.0" data-ng-raty="ratyOptions" data-ng-model="rating.current" data-mouse-over="demo.mouseOver(stars, e);" data-mouse-out="demo.mouseOut(stars, e);"></span></div>
+            </article>
+      </div>
+      <div class="modal-body tab-content padd-0">
+        <div class="row view-content maxwidth-img">
+          <div class="col-md-10 col-md-offset-1">
+            <p>Lorem Ipsum has been the industry’s standard dummy text @jeff Shady won this race. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries”but also the leap into electronic typesetting” remaining essentially unchanged.</p>
+            <img src="img/img2.jpg" width="270" height="150" class="pull-left" alt=""/>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
+            <p>scrambled iremaining essentially unchanged.  Lorem Ipsum is simply dummy text of the <strong>printing and typesetting industry</strong>. Lorem Ipsum is simply.</p>
+            <div class="video-container mar-bottom-20">
+              <iframe src="https://www.youtube.com/embed/K_VKpLDWL6g?rel=0&amp;showinfo=0" data-frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="font-light">@jeff Shady won this race. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+            <ul class="grid-list row mar-top-20">
+              <li class="col-sm-4">
+                <div class="thumbnail height-auto">
+                  <figure class="img-caption" data-placeholder="Some caption for photo Some caption for photo"><img src="img/img1.jpg" width="270" height="150" alt=""></figure>
+                </div>
+              </li>
+              <li class="col-sm-4">
+                <div class="thumbnail height-auto">
+                  <figure class="img-caption" data-placeholder="Some caption for photo Some caption for photo"><img src="img/img2.jpg" width="270" height="150" alt=""></figure>
+                </div>
+              </li>
+              <li class="col-sm-4">
+                <div class="thumbnail height-auto">
+                  <figure class="img-caption" data-placeholder="Some caption for photo Some caption for photo"><img src="img/img1.jpg" width="270" height="150" alt=""></figure>
+                </div>
+              </li>
+              <li class="col-sm-4">
+                <div class="thumbnail height-auto">
+                  <figure class="img-caption" data-placeholder="Some caption for photo Some caption for photo"><img src="img/img2.jpg" width="270" height="150" alt=""></figure>
+                </div>
+              </li>
+              <li class="col-sm-4">
+                <div class="thumbnail height-auto">
+                  <figure class="img-caption" data-placeholder="Some caption for photo Some caption for photo"><img src="img/img1.jpg" width="270" height="150" alt=""></figure>
+                </div>
+              </li>
+              <li class="col-sm-4">
+                <div class="thumbnail height-auto">
+                  <figure class="img-caption" data-placeholder="Some caption for photo Some caption for photo"><img src="img/img2.jpg" width="270" height="150" alt=""></figure>
+                </div>
+              </li>
+            </ul>
+            <div class="row form-action">
+              <aside class="col-xs-6 text-link text-left"><a data-ng-click="editArticle()" class="btn-link">Back to Editing</a></aside>
+              <aside class="col-xs-6 right-btns"><a class="btn btn-primary" href="article-view.html">PUBLISH</a></aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Invite Popups-->
+<div id="inviteModal" class="modal fade flip-animation" data-modal="middle" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <button type="button" class="close" data-dismiss="modal"></button>
+    <div class="modal-content flipContainer">
+      <div class="messages-panel flip-panel" id="inviteFlip">
+        <div class="modal-header">
+          <h5 class="modal-title">INVITE WHOEVER’S MISSING!</h5>
+        </div>
+        <div class="modal-body form-body">
+          <div class="input-group form-group">
+            <input type="text" class="form-control" value="" placeholder="Add Email ID’s">
+            <div class="input-group-btn"><a class="btn btn-danger btn-icon flipLink" data-rel="google_friends"><i class="icon-google"></i> <i class="icon-info" data-toggle="tooltip" data-placement="left" title="Lorem Ipsum is simply dummy text of the printing"></i></a></div>
+          </div>
+          <a class="btn btn-primary flipLink" data-rel="sendInviteFlip">SEND INVITE</a>
+          <p class="mar-top-10"><a class="btn-link flipLink" data-rel="invitePreviewFlip">Preview</a></p>
+        </div>
+        <div class="modal-footer">We do not email your contacts <br>
+          without your permission</div>
+      </div>
+      <div class="messages-panel flip-panel flipHide" id="invitePreviewFlip">
+        <div class="modal-header">
+          <h5 class="modal-title">INVITATION PREVIEW</h5>
+        </div>
+        <div class="modal-body form-body">
+          <div class="text-left">
+            <p>Hi there,<br>
+              John Smith has invited you to obstaclemaniac.com</p>
+            <p>Here athletes help athletes become better athletes.
+              Learn what like minded OCR have to say</p>
+          </div>
+        </div>
+        <div class="modal-footer"><a class="btn-link flipLink" data-rel="inviteFlip">Back to Invite</a></div>
+      </div>
+      <div id="google_friends" class="messages-panel flip-panel flipHide">
+        <input type="hidden" class="flipLink" id="googleFlip" data-rel="google_friends">
+        <div class="modal-header">
+          <h5 class="modal-title">INVITE FRIEND</h5>
+        </div>
+        <div class="modal-body form-body">
+          <p><a><img id="google_user_image" src="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50" width="50" height="50" alt="" class="left"></a></p>
+          <p><a id="google_user_name" href="https://plus.google.com/116425658357162306344">Dinesh Kumar</a><br>
+            <i class="icon icon-gplus"></i></p>
+          <p style="display: none;">Get started by adding your Google+ connections on OhYouHero.</p>
+          <p>Invite Google+ connections to build business within your existing network, and help your community prosper!</p>
+          <p>
+            <input name="" type="button" class="btn btn-green font16 m-top15 m-left14 google-addhero" value="Add Hero" onclick="bn_inviteRegisteredHeros();" style="display: none;">
+          </p>
+          <p> <a id="google_invite_others" onclick="shareOnGoogle();$(this).removeClass('btn-primary').addClass('btn-default');" class="btn btn-primary btn-sm" data-gapiattached="true"> Invite Google+ connections to join OhYouHero </a> </p>
+        </div>
+        <div class="modal-footer"><a class="btn-link flipLink" data-rel="inviteFlip">Back to Invite</a></div>
+      </div>
+      <div class="messages-panel flip-panel flipHide" id="sendInviteFlip">
+        <div class="modal-header">
+          <h5 class="modal-title">THANKS FOR SHARING!</h5>
+        </div>
+        <div class="modal-body form-body">
+          <p>Your invitation has been sent. We hope your friend likes Obstacle Maniac &amp; benefits from it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/vendor/jquery-1.11.2.min.js"></script> 
+<script src="js/vendor/angular.js"></script> 
+<script src="js/vendor/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/chosen-min.js"></script> 
+<script src="js/main.js"></script> 
+<script src="js/Controllers.js"></script> 
+<script>
+$(function () {
+	mainNav(4);
+    $(".responsive-tabs").responsiveTabs();
+});
+
+function createModal(tab){
+	$('#createModal').on('show.bs.modal',function(){
+	  setTimeout(function(){
+		if(!$('.note-dialog>div').is(':visible')){
+		  $('.modal-create .tab-pane').removeClass('active in');
+		  $('.modal-create .nav-tabs li').removeClass('active');
+		  $('.modal-create .nav-tabs a[href="#' + tab + '"]').tab('show');
+		}
+	  },0);
+	  if(( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
+		$('.note-toolbar .btn').tooltip('destroy');
+	  }
+	});
+}
+$('#createModal').on('hide.bs.modal',function(){
+  if($('body').find('.modal-backdrop').length<=2){
+	$('body').find('.modal-backdrop').not(':first').remove();
+  }
+});
+$('#createModal').on('show.bs.modal',function(){
+	$('.note-dialog>div').on('hidden.bs.modal',function(){
+	  setTimeout(function(){
+		$('body').addClass('modal-open');
+	  },0);
+	});
+	$('.note-dialog>div').modal('hide');
+});
+</script>
+</body>
+</html>
